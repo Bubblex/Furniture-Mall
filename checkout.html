@@ -1,11 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>我的订单</title>
+<title>我的购物车</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Luxury Furnish Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta name="keywords" content="家具商城" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -41,22 +40,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="header-top">
       		<div class="logo">
-				<a href="index.html"><h6>Online Furnish</h6><h2>Luxury</h2></a>
+				<a href="index.html"><h6>Furniture-Mall</h6><h2>家具商城</h2></a>
 			 </div>
 		   <div class="header_right">
-			 <ul class="social">
+			 <!--<ul class="social">
 				<li><a href=""> <i class="fb"> </i> </a></li>
 				<li><a href=""><i class="tw"> </i> </a></li>
 				<li><a href=""><i class="utube"> </i> </a></li>
 				<li><a href=""><i class="pin"> </i> </a></li>
 				<li><a href=""><i class="instagram"> </i> </a></li>
-			 </ul>
+			 </ul>-->
 		    <div class="lang_list">
 			  <select tabindex="4" class="dropdown">
-				<option value="" class="label" value="">En</option>
-				<option value="1">English</option>
-				<option value="2">French</option>
-				<option value="3">German</option>
+				<option value="" class="label" value="">个人中心</option>
+				<option value="1">我的资料</option>
+				<option value="2">我的订单</option>
 			  </select>
    			</div>
 			<div class="clearfix"></div>
@@ -65,17 +63,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 </div>
 		 <div class="about_box">
 			<ul class="login">
-				<li class="login_text"><a href="login.html">Login</a></li>
-				<li class="wish"><a href="checkout.html">Wish List</a></li>
+				<li class="login_text"><a href="login.html">登录</a></li>
+				<li class="wish"><a href="checkout.html">注册</a></li>
 				<div class='clearfix'></div>
 		    </ul>
 		    <ul class="quick_access">
-				<li class="view_cart"><a href="checkout.html">View Cart</a></li>
-				<li class="check"><a href="checkout.html">Checkout</a></li>
+				<li class="view_cart"><a href="checkout.html">返回首页</a></li>
+				<li class="check"><a href="checkout.html">查看分类</a></li>
+
 				<div class='clearfix'></div>
 		     </ul>
 			<div class="search">
-			   <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+			   <input type="text" placeholder="搜索" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 			   <input type="submit" value="">
 			</div>
 		  </div>
@@ -85,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   <div class="container">
 		  <div class="check_box">
 		<div class="col-md-9 cart-items">
-			 <h1>My Shopping Bag (2)</h1>
+			 <h1>我的购物车(2)</h1>
 				<script>$(document).ready(function(c) {
 					$('.close1').on('click', function(c){
 						$('.cart-header').fadeOut('slow', function(c){
@@ -101,14 +100,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							 <img src="images/pic1.jpg" class="img-responsive" alt="">
 						</div>
 					   <div class="cart-item-info">
-						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>
+						<h3><a href="#">家具名称</a><span>家具编号: 3578</span></h3>
 						<ul class="qty">
-							<li><p>Size : 5</p></li>
-							<li><p>Qty : 1</p></li>
+							<li><p>规格 : 5</p></li>
+							<li><p>数量 : 1</p></li>
 						</ul>
 						<div class="delivery">
-							 <p>Service Charges : Rs.100.00</p>
-							 <span>Delivered in 2-3 bussiness days</span>
+							 <p>价格 : 10000</p>
+							 <p>折扣 : 100</p>
 							 <div class="clearfix"></div>
 				        </div>
 					   </div>
@@ -131,14 +130,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							 <img src="images/pic2.jpg" class="img-responsive" alt="">
 						</div>
 					   <div class="cart-item-info">
-						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>
+						<h3><a href="#">家具名称</a><span>家具编号: 3578</span></h3>
 						<ul class="qty">
-							<li><p>Size : 5</p></li>
-							<li><p>Qty : 1</p></li>
+							<li><p>规格 : 5</p></li>
+							<li><p>数量 : 1</p></li>
 						</ul>
-							 <div class="delivery">
-							 <p>Service Charges : Rs.100.00</p>
-							 <span>Delivered in 2-3 bussiness days</span>
+						<div class="delivery">
+							 <p>价格 : 10000RMB</p>
+							 <p>折扣 : 100RMB</p>
 							 <div class="clearfix"></div>
 				        </div>
 					   </div>
@@ -148,32 +147,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  </div>
 		 </div>
 		 <div class="col-md-3 cart-total">
-			 <a class="continue" href="#">Continue to basket</a>
+			 <a class="continue" href="#">再逛逛</a>
 			 <div class="price-details">
-				 <h3>Price Details</h3>
-				 <span>Total</span>
+				 <h3>价格清单</h3>
+				 <span>原价共计</span>
 				 <span class="total1">6200.00</span>
-				 <span>Discount</span>
-				 <span class="total1">---</span>
-				 <span>Delivery Charges</span>
+				 <span>件数</span>
+				 <span class="total1">3</span>
+				 <span>优惠</span>
 				 <span class="total1">150.00</span>
 				 <div class="clearfix"></div>
 			 </div>
 			 <ul class="total_price">
-			   <li class="last_price"> <h4>TOTAL</h4></li>
+			   <li class="last_price"> <h4>折扣后共计</h4></li>
 			   <li class="last_price"><span>6350.00</span></li>
 			   <div class="clearfix"> </div>
 			 </ul>
 
 
 			 <div class="clearfix"></div>
-			 <a class="order" href="#">Place Order</a>
-			 <div class="total-item">
+			 <a class="order" href="#">支付</a>
+			 <!--<div class="total-item">
 				 <h3>OPTIONS</h3>
 				 <h4>COUPONS</h4>
 				 <a class="cpns" href="#">Apply Coupons</a>
 				 <p><a href="login.html">Log In</a> to use accounts - linked coupons</p>
-			 </div>
+			 </div>-->
 			</div>
 			<div class="clearfix"></div>
 	 </div>
@@ -193,7 +192,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    <div class="container">
 	      <div class="instagram_top">
 	      	<div class="instagram text-center">
-				<h3>Our Collections</h3>
+				<h3>新品</h3>
 			</div>
 	        <ul class="instagram_grid">
 			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i1.jpg" class="img-responsive"alt=""/></a></li>
@@ -205,7 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  <div class="clearfix"></div>
 			  <div id="small-dialog1" class="mfp-hide">
 				<div class="pop_up">
-					<h4>A Sample Photo Stream</h4>
+					<h4>新品名称</h4>
 					<img src="images/i_zoom.jpg" class="img-responsive" alt=""/>
 				</div>
 			  </div>
@@ -270,7 +269,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer_bottom">
 		<div class="container">
 			<div class="copy">
-			   <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+			   <p>版权所有 - 马凯豪 <a href="http://www.cssmoban.com/" target="_blank">进入后台管理系统</a></p>
 			</div>
 		</div>
 	</div>

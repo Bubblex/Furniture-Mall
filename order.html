@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>登录页</title>
+<title>我的订单</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="家具商城" />
@@ -14,7 +14,6 @@
 <!-- Custom Theme files -->
 <!--webfont-->
 <!-- <link href='http://fonts.useso.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'> -->
-<!-- <link href='http://fonts.useso.com/css?family=Poiret+One' rel='stylesheet' type='text/css'> -->
 <!--//webfont-->
 <script src="js/jquery.easydropdown.js"></script>
 <!-- Add fancyBox main JS and CSS files -->
@@ -35,29 +34,27 @@
 			});
 		});
 		</script>
-<!----details-product-slider--->
 </head>
 <body>
    <div class="header">
 	<div class="container">
 		<div class="header-top">
       		<div class="logo">
-				<a href="index.html"><h6>Online Furnish</h6><h2>Luxury</h2></a>
+				<a href="index.html"><h6>Furniture-Mall</h6><h2>家具商城</h2></a>
 			 </div>
 		   <div class="header_right">
-			 <ul class="social">
+			 <!--<ul class="social">
 				<li><a href=""> <i class="fb"> </i> </a></li>
 				<li><a href=""><i class="tw"> </i> </a></li>
 				<li><a href=""><i class="utube"> </i> </a></li>
 				<li><a href=""><i class="pin"> </i> </a></li>
 				<li><a href=""><i class="instagram"> </i> </a></li>
-			 </ul>
+			 </ul>-->
 		    <div class="lang_list">
 			  <select tabindex="4" class="dropdown">
-				<option value="" class="label" value="">En</option>
-				<option value="1">English</option>
-				<option value="2">French</option>
-				<option value="3">German</option>
+				<option value="" class="label" value="">个人中心</option>
+				<option value="1">我的资料</option>
+				<option value="2">我的订单</option>
 			  </select>
    			</div>
 			<div class="clearfix"></div>
@@ -82,76 +79,103 @@
 		  </div>
 		</div>
     </div>
-   <div class="main">
-	  <div class="content_box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="menu_box">
-				   	  	<h3 class="menu_head">Menu</h3>
-				   	     <ul class="nav">
-					   	  	<li><a href="about.html">About</a></li>
-					   	  	<li><a href="about.html">Living Room</a></li>
-					   	  	<li><a href="about.html">Office Furniture</a></li>
-					   	  	<li><a href="about.html">Bean Bags</a></li>
-					   	  	<li><a href="about.html">Tables</a></li>
-					   	  	<li><a href="about.html">Sofas</a></li>
-					   	  	<li><a href="about.html">Wardrobes</a></li>
-					   	  	<li><a href="about.html">Beds</a></li>
-					   	  	<li><a href="typo.html">Typo</a></li>
-					   	  	<li><a href="about.html">Chairs</a></li>
-					   	  	<li><a href="about.html">Kids Beds</a></li>
-					   	 </ul>
-			   	    </div>
-			   	 </div>
-			  <div class="col-md-9">
-			    <div class="dreamcrub">
-			   	 <ul class="breadcrumbs">
-                    <li class="home">
-                       <a href="index.html" title="Go to Home Page">Home</a>&nbsp;
-                       <span>&gt;</span>
-                    </li>
-                    <li class="home">&nbsp;
-                        &nbsp;Account
-                        <span>&gt;</span>&nbsp;
-                    </li>
-                    <li class="women">
-                       Login
-                    </li>
-                </ul>
-                <ul class="previous">
-                	<li><a href="index.html">Back to Previous Page</a></li>
-                </ul>
-                <div class="clearfix"></div>
-			   </div>
-			   <div class="account_grid">
-			   <div class="col-md-6 login-left">
-			  	 <h3>NEW CUSTOMERS</h3>
-				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-				 <a class="acount-btn" href="register.html">Create an Account</a>
-			   </div>
-			   <div class="col-md-6 login-right">
-			  	<h3>REGISTERED CUSTOMERS</h3>
-				<p>If you have an account with us, please log in.</p>
-				<form>
-				  <div>
-					<span>Email Address<label>*</label></span>
-					<input type="text">
+    <div class="main">
+	   <div class="container">
+		  <div class="check_box">
+		<div class="col-md-9 cart-items">
+			 <h1>My Shopping Bag (2)</h1>
+				<script>$(document).ready(function(c) {
+					$('.close1').on('click', function(c){
+						$('.cart-header').fadeOut('slow', function(c){
+							$('.cart-header').remove();
+						});
+						});
+					});
+			   </script>
+			 <div class="cart-header">
+				 <div class="close1"> </div>
+				 <div class="cart-sec simpleCart_shelfItem">
+						<div class="cart-item cyc">
+							 <img src="images/pic1.jpg" class="img-responsive" alt="">
+						</div>
+					   <div class="cart-item-info">
+						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>
+						<ul class="qty">
+							<li><p>Size : 5</p></li>
+							<li><p>Qty : 1</p></li>
+						</ul>
+						<div class="delivery">
+							 <p>Service Charges : Rs.100.00</p>
+							 <span>Delivered in 2-3 bussiness days</span>
+							 <div class="clearfix"></div>
+				        </div>
+					   </div>
+					   <div class="clearfix"></div>
+
 				  </div>
-				  <div>
-					<span>Password<label>*</label></span>
-					<input type="text">
-				  </div>
-				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="Login">
-			    </form>
-			   </div>
-			   <div class="clearfix"> </div>
 			 </div>
-		   </div>
-		  </div>
+			 <script>$(document).ready(function(c) {
+					$('.close2').on('click', function(c){
+							$('.cart-header2').fadeOut('slow', function(c){
+						$('.cart-header2').remove();
+					});
+					});
+					});
+			 </script>
+			 <div class="cart-header2">
+				 <div class="close2"> </div>
+				  <div class="cart-sec simpleCart_shelfItem">
+						<div class="cart-item cyc">
+							 <img src="images/pic2.jpg" class="img-responsive" alt="">
+						</div>
+					   <div class="cart-item-info">
+						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>
+						<ul class="qty">
+							<li><p>Size : 5</p></li>
+							<li><p>Qty : 1</p></li>
+						</ul>
+							 <div class="delivery">
+							 <p>Service Charges : Rs.100.00</p>
+							 <span>Delivered in 2-3 bussiness days</span>
+							 <div class="clearfix"></div>
+				        </div>
+					   </div>
+					   <div class="clearfix"></div>
+
+				  </div>
+			  </div>
+		 </div>
+		 <div class="col-md-3 cart-total">
+			 <a class="continue" href="#">Continue to basket</a>
+			 <div class="price-details">
+				 <h3>Price Details</h3>
+				 <span>Total</span>
+				 <span class="total1">6200.00</span>
+				 <span>Discount</span>
+				 <span class="total1">---</span>
+				 <span>Delivery Charges</span>
+				 <span class="total1">150.00</span>
+				 <div class="clearfix"></div>
+			 </div>
+			 <ul class="total_price">
+			   <li class="last_price"> <h4>TOTAL</h4></li>
+			   <li class="last_price"><span>6350.00</span></li>
+			   <div class="clearfix"> </div>
+			 </ul>
+
+
+			 <div class="clearfix"></div>
+			 <a class="order" href="#">Place Order</a>
+			 <div class="total-item">
+				 <h3>OPTIONS</h3>
+				 <h4>COUPONS</h4>
+				 <a class="cpns" href="#">Apply Coupons</a>
+				 <p><a href="login.html">Log In</a> to use accounts - linked coupons</p>
+			 </div>
+			</div>
+			<div class="clearfix"></div>
+	 </div>
 	     </div>
-	    </div>
 	    </div>
 		<div class="container">
 			<div class="brands">
@@ -234,7 +258,7 @@
 				<p class="footer_desc">Nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
 				<div class="search_footer">
 				  <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
-				  <input type="submit" value="Submit">
+				  <input type="submit" value="Subscribe">
 				</div>
 				<img src="images/payment.png" class="img-responsive" alt=""/>
 			</div>
