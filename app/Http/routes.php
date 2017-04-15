@@ -61,6 +61,13 @@ Route::group(['prefix' => 'user'], function() {
 
 Route::group(['prefix' => 'goods'], function() {
     /**
+     * 商品列表页
+     * 访问地址；/goods/list
+     */
+    Route::get('list', function() {
+        return view('goods.list');
+    });
+    /**
      * 商品详情页
      * 访问地址：/goods/single
      */
