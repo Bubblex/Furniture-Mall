@@ -18,3 +18,25 @@
 Route::get('/', function() {
     return view('home.index');
 });
+
+/**
+ * 定义一个路由群组，并设置访问前缀为 account
+ * 在该群组内部，所有访问地址都需要增加前缀，例如登录页的访问地址：/account/login
+ */
+Route::group(['prefix' => 'account'], function() {
+    /**
+     * 登录页
+     * 访问地址：/account/login
+     */
+    Route::get('login', function() {
+        return view('account.login');
+    });
+
+    /**
+     * 注册页
+     * 访问地址：/account/register
+     */
+    Route::get('register', function() {
+        return view('account.register');
+    });
+});
