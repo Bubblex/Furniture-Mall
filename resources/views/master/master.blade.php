@@ -35,6 +35,18 @@
   {{-- head 标签后置内容 --}}
   @section('head-after')
   @show
+
+  {{-- 项目中必须要引用的通用脚本文件 --}}
+  @section('required-script')
+  @show
+
+  {{-- 页面中用到的插件脚本 --}}
+  @section('vendor-script')
+  @show
+
+  {{-- 页面中用到的自定义脚本 --}}
+  @section('page-script')
+  @show
 </head>
 <body class="@yield('body-class')">
   {{-- body 标签内的前置内容 --}}
@@ -59,18 +71,6 @@
 
   {{-- body 标签内的后置内容 --}}
   @section('body-after')
-  @show
-
-  {{-- 项目中必须要引用的通用脚本文件 --}}
-  @section('required-script')
-  @show
-
-  {{-- 页面中用到的插件脚本 --}}
-  @section('vendor-script')
-  @show
-
-  {{-- 页面中用到的自定义脚本 --}}
-  @section('page-script')
   @show
 </body>
 </html>

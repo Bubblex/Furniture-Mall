@@ -58,3 +58,13 @@ Route::group(['prefix' => 'user'], function() {
         return view('user.order');
     });
 });
+
+Route::group(['prefix' => 'goods'], function() {
+    /**
+     * 商品详情页
+     * 访问地址：/goods/single
+     */
+    Route::get('single', function() {
+        return view('goods.single');
+    });
+});
