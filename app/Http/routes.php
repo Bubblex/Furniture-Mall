@@ -54,7 +54,7 @@ Route::group(['prefix' => 'user'], function() {
      * 我的订单页
      * 访问地址：/user/order
      */
-    Route::get('user/order', function() {
+    Route::get('order', function() {
         return view('user.order');
     });
 });
