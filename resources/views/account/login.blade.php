@@ -37,7 +37,7 @@
                 <li class="women">登录</li>
               </ul>
               <ul class="previous">
-                <li><a href="index.html">返回上一页</a></li>
+                <li><a href="/">返回上一页</a></li>
               </ul>
               <div class="clearfix"></div>
             </div>

@@ -55,17 +55,16 @@
 					<div class="menu_box">
 				   	  	<h3 class="menu_head">为您推荐</h3>
 				   	     <ul class="nav">
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="typo.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
-					   	  	<li><a href="about.html">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+					   	  	<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
 					   	 </ul>
 			   	    </div>
 			   	    <div class="side_banner">
