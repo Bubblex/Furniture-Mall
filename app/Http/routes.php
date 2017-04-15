@@ -40,3 +40,21 @@ Route::group(['prefix' => 'account'], function() {
         return view('account.register');
     });
 });
+
+Route::group(['prefix' => 'user'], function() {
+    /**
+     * 我的购物车页
+     * 访问地址：/user/shopping-cart
+     */
+    Route::get('shopping-cart', function() {
+        return view('user.shopping-cart');
+    });
+
+    /**
+     * 我的订单页
+     * 访问地址：/user/order
+     */
+    Route::get('user/order', function() {
+        return view('user.order');
+    });
+});
