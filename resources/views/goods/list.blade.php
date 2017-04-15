@@ -20,22 +20,17 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="menu_box">
-				   	  	<h3 class="menu_head">Menu</h3>
+				   	  	<h3 class="menu_head">分类</h3>
 				   	     <ul class="nav">
-					   	  	<li><a href="about.html">About</a></li>
-					   	  	<li><a href="about.html">Living Room</a></li>
-					   	  	<li><a href="about.html">Office Furniture</a></li>
-					   	  	<li><a href="about.html">Bean Bags</a></li>
-					   	  	<li><a href="about.html">Tables</a></li>
-					   	  	<li><a href="about.html">Sofas</a></li>
-					   	  	<li><a href="about.html">Wardrobes</a></li>
-					   	  	<li><a href="about.html">Beds</a></li>
-					   	  	<li><a href="typo.html">Typo</a></li>
-					   	  	<li><a href="about.html">Chairs</a></li>
-					   	  	<li><a href="about.html">Kids Beds</a></li>
+					   	  	<li><a href="/goods/list">起居室</a></li>
+					   	  	<li><a href="/goods/list">桌子</a></li>
+					   	  	<li><a href="/goods/list">沙发</a></li>
+					   	  	<li><a href="/goods/list">床</a></li>
+					   	  	<li><a href="/goods/list">椅子</a></li>
+					   	  	<li><a href="/goods/list">婴儿床</a></li>
 					   	 </ul>
 			   	    </div>
-			   	    <div class="category">
+			   	    {{-- <div class="category">
 			   	    	<h3 class="menu_head">Category Options</h3>
 			   	    	<ul class="category_nav">
 					   	  	<li><a href="#">Dining & Serving</a></li>
@@ -78,15 +73,15 @@
 							<li><a href="#">Pouffes</a></li>
 					        <li><a href="#">Women</a></li>
 							<li><a href="#">Bedroom</a></li>
-						</ul>
-						<a href="#" class="link1">View all tags</a>
+						</ul> --}}
+						{{-- <a href="#" class="link1">View all tags</a>
 				     </div>
 				     <div class="side_banner">
 					   <div class="banner_img"><img src="/resource/images/pic9.jpg" class="img-responsive" alt=""/></div>
 					   <div class="banner_holder">
 						  <h3>Now <br> is <br> Open!</h3>
-					   </div>
-				     </div>
+					   </div> --}}
+				     {{-- </div> --}}
 			  </div>
 			  <div class="col-md-9">
 			    <div class="dreamcrub">
@@ -154,16 +149,16 @@
 									<img src="/resource/images/pic12.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
+										 <p class="title">商品名称</p>
 									   </div>
-									   <div class="mount item_price price">$99.00</div>
+									   <div class="mount item_price price">￥99.00</div>
 									   <div class="clearfix"></div>
 								     </div>
 								  </div>
 			                     </div>
 		                    </a>
 							<div class="cbp-vm-details">
-								Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
+								商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -174,16 +169,16 @@
 									<img src="/resource/images/pic11.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
+										 <p class="title">商品名称</p>
 									   </div>
-									   <div class="price">$99.00</div>
+									   <div class="price">￥99.00</div>
 									   <div class="clearfix"></div>
 								     </div>
 								  </div>
 			                     </div>
 		                    </a>
 							<div class="cbp-vm-details">
-								Wattle seed bunya nuts spring onion okra garlic bitterleaf zucchini.
+								商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -194,16 +189,16 @@
 									<img src="/resource/images/pic10.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
+										 <p class="title">商品名称</p>
 									   </div>
-									   <div class="price">$99.00</div>
+									   <div class="price">￥99.00</div>
 									   <div class="clearfix"></div>
 								     </div>
 								  </div>
 			                     </div>
 		                    </a>
 							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean.
+								商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -214,16 +209,16 @@
 									<img src="/resource/images/pic4.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
+										 <p class="title">商品名称</p>
 									   </div>
-									   <div class="price">$99.00</div>
+									   <div class="price">￥99.00</div>
 									   <div class="clearfix"></div>
 								     </div>
 								  </div>
 			                   </div>
 							</a>
 							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
+								商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -234,16 +229,16 @@
 									<img src="/resource/images/pic8.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
+										 <p class="title">商品名称</p>
 									   </div>
-									   <div class="price">$99.00</div>
+									   <div class="price">￥99.00</div>
 									   <div class="clearfix"></div>
 								     </div>
 								  </div>
 			                     </div>
 							</a>
 							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
+								商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -254,16 +249,16 @@
 									<img src="/resource/images/pic7.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
+										 <p class="title">商品名称</p>
 									   </div>
-									   <div class="price">$99.00</div>
+									   <div class="price">￥99.00</div>
 									   <div class="clearfix"></div>
 								     </div>
 								  </div>
 			                     </div>
 		                    </a>
 							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
+								商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -274,16 +269,16 @@
 									<img src="/resource/images/pic6.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
+										 <p class="title">商品名称</p>
 									   </div>
-									   <div class="price">$99.00</div>
+									   <div class="price">￥99.00</div>
 									   <div class="clearfix"></div>
 								     </div>
 								  </div>
 			                     </div>
 							</a>
 							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
+								商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -294,16 +289,16 @@
 									<img src="/resource/images/pic5.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
+										 <p class="title">商品名称</p>
 									   </div>
-									   <div class="price">$99.00</div>
+									   <div class="price">￥99.00</div>
 									   <div class="clearfix"></div>
 								     </div>
 								  </div>
 			                    </div>
 							</a>
 							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
+								商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 							</div>
 							<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -314,16 +309,16 @@
 									<img src="/resource/images/pic4.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
+										 <p class="title">商品名称</p>
 									   </div>
-									   <div class="price">$99.00</div>
+									   <div class="price">￥99.00</div>
 									   <div class="clearfix"></div>
 								     </div>
 								  </div>
 			                    </div>
 							</a>
 							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
+								商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
