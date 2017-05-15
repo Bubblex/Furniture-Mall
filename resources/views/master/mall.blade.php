@@ -31,7 +31,3 @@
   @include('master.mall.header')
 @endsection
 
-@section('footer')
-  {{-- 导入 footer 文件 --}}
-  @include('master.mall.footer')
-@endsection

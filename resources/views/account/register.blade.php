@@ -1,5 +1,18 @@
 @extends('master.mall')
 
+@section('header')
+<div class="header">
+  <div class="container">
+    <div class="header-top">
+      <div class="logo">
+      <a href="/"><h6>Furniture-Mall</h6><h2>家具商城</h2></a>
+      </div>
+    <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+@endsection
+
 @section('main')
 
     <div class="main">
@@ -43,10 +56,9 @@
 				</form>
 				<div class="clearfix"> </div>
 				<div class="register-but">
-				   <form>
-					   <input type="submit" value="注册">
-					   <div class="clearfix"></div>
-				   </form>
+					<a href="javascript:">注册</a>
+					<a href="/account/login">已有账号去登录</a>
+					<div class="clearfix"></div>
 				</div>
 		   </div>
     </div>
