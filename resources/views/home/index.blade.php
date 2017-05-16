@@ -85,12 +85,43 @@
 				<div class="col-md-9">
 					<h3 class="m_1">新品</h3>
 				 	<div class="content_grid">
-						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+
+					 {{-- BEGIN 一件商品 --}}
+				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<a href="single.html">
+								<div class="inner_content clearfix">
+									<div class="product_image">
+										<img src="/resource/images/pic2.jpg" class="img-responsive" alt=""/>
+										<a href="javascript:" class="button item_add item_1"> </a>
+										<div class="product_container">
+											<div class="cart-left">
+												<p class="title">商品名称</p>
+											</div>
+											<span class="amount item_price">￥1500.00</span>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						{{-- END 一件商品 --}}
+
+
+
+				   <div class="clearfix"></div>
+			  </div>
+
+
+				<h3 class="m_2">最热</h3>
+				<div class="content_grid">
+
+					{{-- BEGIN 一件商品 --}}
+					<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
 							<a href="single.html">
 								<div class="inner_content clearfix">
 									<div class="product_image">
 										<img src="/resource/images/pic1.jpg" class="img-responsive" alt=""/>
-										<a href="" class="button item_add item_1"> </a>
+										<a href="javascript:" class="button item_add item_1"> </a>
 										<div class="product_container">
 								 		  <div class="cart-left">
 									 			<p class="title">商品名称</p>
@@ -102,210 +133,45 @@
 								</div>
 							</a>
 				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-							<a href="single.html">
-								<div class="inner_content clearfix">
-									<div class="product_image">
-									<img src="/resource/images/pic2.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>
+						{{-- END 一件商品 --}}
+
+			   		
+					<div class="clearfix"></div>
+				</div>
+
+
+
+				<h3 class="m_2">折扣</h3>
+				<div class="content_grid">
+
+
+					{{-- BEGIN 一件商品 --}}
+					<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+						<a href="single.html">
+							<div class="inner_content clearfix">
+								<div class="product_image">
+									<img src="/resource/images/pic1.jpg" class="img-responsive" alt=""/>
+									<a href="javascript:" class="button item_add item_1"> </a>
 									<div class="product_container">
 										<div class="cart-left">
-									 		<p class="title">商品名称</p>
-								   	</div>
-									<span class="amount item_price">￥1500.00</span>
-									<div class="clearfix"></div>
+											<p class="title">商品名称</p>
+										</div>
+										<span class="amount item_price">￥2300.00</span>
+										<div class="clearfix"></div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</a>
-				</div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1">
-				  	      <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic3.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-								<div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥2000.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				   </div>
-				   <div class="clearfix"></div>
-			  </div>
-			  <div class="content_grid">
-				  <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	   <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic4.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-								<div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥1700.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	      <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic5.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-								<div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥800.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1">
-				  	      <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic6.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-								<div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥199.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				       </div>
-				  <div class="clearfix"></div>
-			   </div>
-			   <h3 class="m_2">最热</h3>
-			   <div class="content_grid">
-			   		<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	   <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic7.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-							    <div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥4500.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	     <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic8.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-							    <div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥1050.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1">
-				  	  <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic13.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-								 <div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥2000.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				    </div>
-				    <div class="clearfix"></div>
-			    </div>
-			    <h3 class="m_2">折扣</h3>
-			   <div class="content_grid">
-			   		<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	   <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic10.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-								<div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥99.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	   <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic11.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-								<div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥60.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1">
-				  	    <a href="single.html">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="/resource/images/pic12.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-								<div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">商品名称</p>
-								   </div>
-								   <span class="amount item_price">￥900.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				   </div>
-				   <div class="clearfix"></div>
-			    </div>
+						</a>
+					</div>
+					{{-- END 一件商品 --}}
+
+
 			  </div>
 			</div>
 		 </div>
 		</div>
+
+
 		<div class="container">
 			<div class="brands">
 				<ul class="brand_icons">
@@ -316,28 +182,7 @@
 					<li class="last"><img src='/resource/images/icon5.png' class="img-responsive" alt=""/></li>
 				</ul>
 			</div>
-	    </div>
-	    <div class="container">
-			<div class="instagram_top">
-				<div class="instagram text-center">
-					<h3>精品推荐</h3>
-				</div>
-				<ul class="instagram_grid">
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="/resource/images/i1.jpg" class="img-responsive"alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="/resource/images/i2.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="/resource/images/i3.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="/resource/images/i4.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="/resource/images/i5.jpg" class="img-responsive" alt=""/></a></li>
-				  <li class="last_instagram"><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="/resource/images/i6.jpg" class="img-responsive" alt=""/></a></li>
-				  <div class="clearfix"></div>
-				  <div id="small-dialog1" class="mfp-hide">
-					<div class="pop_up">
-						<h4>A Sample Photo Stream</h4>
-						<img src="/resource/images/i_zoom.jpg" class="img-responsive" alt=""/>
-					</div>
-				  </div>
-				</ul>
-			</div>
-	    </div>
-    </div>
+		</div>
+
+</div>
 @endsection

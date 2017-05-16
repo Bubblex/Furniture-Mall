@@ -592,7 +592,7 @@ ul.article_links li a {
 .col_1_of_3 {
 	display: block;
 	float: left;
-	margin: 1% 0 1% 2.6%;
+	margin: 1% 0 1% 1% ;
 }
 .span_1_of_3 {
 	width: 31.6%;
@@ -601,9 +601,7 @@ ul.article_links li a {
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 }
-.col_1_of_3:first-child {
-	margin-left: 0;
-}
+
 .inner_content {
 	background: #fff;
 	position: relative;
