@@ -6,6 +6,8 @@
 		<div class="check_box">
 			<div class="col-md-9 cart-items">
 				<h1>我的购物车(2)</h1>
+
+				<!--购物车内一条数据-->
 				<script>
 				$(document).ready(function(c) {
 					$('.close1').on('click', function(c){
@@ -15,8 +17,7 @@
 					});
 				});
 				</script>
-
-				<!--购物车内一条数据-->
+				
 				<div class="cart-header">
 					<div class="close1"> </div>
 					<div class="cart-sec simpleCart_shelfItem">
@@ -24,16 +25,21 @@
 							<img src="/resource/images/pic1.jpg" class="img-responsive" alt="">
 						</div>
 						<div class="cart-item-info">
-							<h3><a href="#">家具名称</a><span>家具编号: 3578</span></h3>
+							<h3>
+								<a href="javascript:">家具名称</a>
+								<span>家具编号: 3578</span>
+							</h3>
+							<ul class="qty">
+								<li><p>订单编号 : 5</p></li>
+							</ul>
 							<ul class="qty">
 								<li><p>规格 : 5</p></li>
 								<li><p>数量 : 1</p></li>
 							</ul>
-							<div class="delivery">
-								<p>价格 : 10000</p>
-								<p>折扣 : 100</p>
-								<div class="clearfix"></div>
-							</div>
+							<ul class="qty">
+								<li><p>原价 : 5</p></li>
+								<li><p>实付 : 1</p></li>
+							</ul>
 						</div>
 						<div class="clearfix"></div>
 					</div>

@@ -13,15 +13,12 @@
 
 			<div class="header_right">
 				<div class="lang_list">
-					<select tabindex="4" class="dropdown">
-						<option value="" class="label" value="">个人中心</option>
-						<option value="1">我的资料</option>
-						<option value="2">我的订单</option>
-						<option value="2">我的购物车</option>
-					</select>
+					<a href="/user/order" style='color: #fff'>个人中心</a> |
+					<a href="/account/login" style='color: #fff'>退出登录</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
+
 			<div class="clearfix"></div>
 		</div>
 
@@ -37,7 +34,9 @@
 						<a href="checkout.html">
 							<h4><i class="cart_icon"> </i><div class="clearfix"> </div></h4>
 						</a>
-						<h5 class="empty"><a href="/user/shopping-cart" class="simpleCart_empty">查看购物车</a></h5>
+						<h5 class="empty">
+							<a href="/user/shopping-cart" class="simpleCart_empty">查看购物车</a>
+						</h5>
 						<div class="clearfix"> </div>
 					</ul>
 				</div>
@@ -88,7 +87,7 @@
 
 					 {{-- BEGIN 一件商品 --}}
 				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-							<a href="single.html">
+							<a href="/goods/single">
 								<div class="inner_content clearfix">
 									<div class="product_image">
 										<img src="/resource/images/pic2.jpg" class="img-responsive" alt=""/>

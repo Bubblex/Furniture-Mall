@@ -39,9 +39,9 @@
 							<div class="sort-by">
 								<label>排序</label>
 								<select>
-									<option value="">销量</option>
-									<option value="">价格升序</option>
-									<option value="">价格降序</option>
+									<option value="1">销量</option>
+									<option value="2">价格升序</option>
+									<option value="3">价格降序</option>
 								</select>
 								<a href=""><img src="/resource/images/arrow2.gif" alt="" class="v-middle"></a>
 							</div>
@@ -69,6 +69,7 @@
 								</a>
 								<div class="cbp-vm-details">
 									商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
+									<p>销量：88</p>
 								</div>
 								<a class="button item_add cbp-vm-icon cbp-vm-add" href="javascript:">加入购物车</a>
 							</li>

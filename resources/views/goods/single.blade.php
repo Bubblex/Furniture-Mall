@@ -68,14 +68,6 @@
 							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
 						</ul>
 					</div>
-					<div class="side_banner">
-						<div class="banner_img">
-							<img src="/resource/images/pic9.jpg" class="img-responsive" alt=""/>
-						</div>
-						<div class="banner_holder">
-							<h3>Now <br> is <br> Open!</h3>
-						</div>
-					</div>
 				</div>
 
 
@@ -93,7 +85,6 @@
 							</li>
 							<li class="home">&nbsp;
 								家具名称
-								<span>&gt;</span>&nbsp;
 							</li>
 						</ul>
 						<ul class="previous">
@@ -206,11 +197,11 @@
 
 				<h3 class="like">猜您喜欢</h3>
 				<ul id="flexiselDemo3">
-					<li><img src="/resource/images/pic11.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Syenergy 2mm</a><p>Rs 850</p></div></li>
-					<li><img src="/resource/images/pic10.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Surf Yoke</a><p>Rs 1050</p></div></li>
-					<li><img src="/resource/images/pic4.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Salty Daiz</a><p>Rs 990</p></div></li>
-					<li><img src="/resource/images/pic8.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Cheeky Zane</a><p>Rs 850</p></div></li>
-					<li><img src="/resource/images/pic7.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Synergy</a><p>Rs 870</p></div></li>
+					<li><img src="/resource/images/pic11.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 850</p></div></li>
+					<li><img src="/resource/images/pic10.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 1050</p></div></li>
+					<li><img src="/resource/images/pic4.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 990</p></div></li>
+					<li><img src="/resource/images/pic8.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 850</p></div></li>
+					<li><img src="/resource/images/pic7.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 870</p></div></li>
 				</ul>
 				<script type="text/javascript">
 					$(window).load(function() {
