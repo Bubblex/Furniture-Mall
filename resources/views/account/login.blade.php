@@ -37,7 +37,6 @@
                     <span>密码<label>*</label></span>
                     <input type="text">
                   </div>
-                  <a class="forgot" href="#">忘记密码？  </a>
                   <input type="submit" value="登录">
                 </form>
               </div>
