@@ -13,7 +13,7 @@ class AddForeignToUserAddressTable extends Migration
     public function up()
     {
         Schema::table('user_address', function (Blueprint $table) {
-            //
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

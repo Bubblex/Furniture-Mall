@@ -19,6 +19,7 @@ class CreateGoodsTable extends Migration
             $table->increments('id');
             $table->string('name')->comment('商品名称');
             $table->double('price')->comment('商品价格');
+            $table->integer('goods_type_id')->unsigned()->comment('商品类型');
             $table->double('discount_price')->comment('商品优惠价格');
             $table->longText('summary')->comment('商品简介');
             $table->longText('detail')->comment('商品详情');

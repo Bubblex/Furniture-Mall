@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignToGoodsNormsTable extends Migration
+class AddForeignToShoppingCartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,8 @@ class AddForeignToGoodsNormsTable extends Migration
      */
     public function up()
     {
-        Schema::table('goods_norms', function (Blueprint $table) {
+        Schema::table('shopping_carts', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('goods_id')->references('id')->on('goods');
         });
     }
@@ -24,7 +25,7 @@ class AddForeignToGoodsNormsTable extends Migration
      */
     public function down()
     {
-        Schema::table('goods_norms', function (Blueprint $table) {
+        Schema::table('shopping_carts', function (Blueprint $table) {
             //
         });
     }

@@ -10,6 +10,7 @@ return array(
     'AddForeignToGoodsNormsTable' => $baseDir . '/database/migrations/2017_05_17_141722_add_foreign_to_goods_norms_table.php',
     'AddForeignToGoodsTable' => $baseDir . '/database/migrations/2017_05_17_141546_add_foreign_to_goods_table.php',
     'AddForeignToOrdersTable' => $baseDir . '/database/migrations/2017_05_17_141901_add_foreign_to_orders_table.php',
+    'AddForeignToShoppingCartsTable' => $baseDir . '/database/migrations/2017_05_17_142851_add_foreign_to_shopping_carts_table.php',
     'AddForeignToUserAddressTable' => $baseDir . '/database/migrations/2017_05_17_141917_add_foreign_to_user_address_table.php',
     'AddForeignToUsersTable' => $baseDir . '/database/migrations/2017_05_17_141535_add_foreign_to_users_table.php',
     'CreateGoodsImagesTable' => $baseDir . '/database/migrations/2017_05_17_134833_create_goods_images_table.php',

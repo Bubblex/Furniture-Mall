@@ -334,6 +334,7 @@ class ComposerStaticInite99a8f0a379f44b73c5fabe858b0014d
         'AddForeignToGoodsNormsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_141722_add_foreign_to_goods_norms_table.php',
         'AddForeignToGoodsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_141546_add_foreign_to_goods_table.php',
         'AddForeignToOrdersTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_141901_add_foreign_to_orders_table.php',
+        'AddForeignToShoppingCartsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_142851_add_foreign_to_shopping_carts_table.php',
         'AddForeignToUserAddressTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_141917_add_foreign_to_user_address_table.php',
         'AddForeignToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_141535_add_foreign_to_users_table.php',
         'CreateGoodsImagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_134833_create_goods_images_table.php',

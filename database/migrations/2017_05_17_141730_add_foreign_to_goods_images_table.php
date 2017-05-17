@@ -13,7 +13,7 @@ class AddForeignToGoodsImagesTable extends Migration
     public function up()
     {
         Schema::table('goods_images', function (Blueprint $table) {
-            //
+            $table->foreign('goods_id')->references('id')->on('goods');
         });
     }
 
