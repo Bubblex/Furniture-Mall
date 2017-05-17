@@ -28,17 +28,13 @@ Route::group(['prefix' => 'account'], function() {
      * 登录页
      * 访问地址：/account/login
      */
-    Route::get('login', function() {
-        return view('account.login');
-    });
+    Route::get('login', 'AccountController@loginPage');
 
     /**
      * 注册页
      * 访问地址：/account/register
      */
-    Route::get('register', function() {
-        return view('account.register');
-    });
+    Route::get('register', 'AccountController@registerPage');
 });
 
 Route::group(['prefix' => 'user'], function() {
