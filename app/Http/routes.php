@@ -31,6 +31,12 @@ Route::group(['prefix' => 'account'], function() {
     Route::get('login', 'AccountController@loginPage');
 
     /**
+     * 登录接口
+     * 访问地址：/account/login
+     */
+    Route::post('login', 'AccountController@login');
+
+    /**
      * 注册页
      * 访问地址：/account/register
      */

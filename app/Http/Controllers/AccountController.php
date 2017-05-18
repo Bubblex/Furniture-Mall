@@ -78,6 +78,27 @@ class AccountController extends Controller
      * @return void
      */
     public function login(Request $request) {
+        $user = $this->user->byUsername($request->username);
 
+        if (!$user) {
+            return response()->json([
+                'status' => 2,
+                'message' => '该用户不存在'
+            ]);
+        }
+
+        if ($user->password != md5($request->password)) {
+            return response()->json([
+                'status' => 3,
+                'message' => '用户名或密码不正确'
+            ]);
+        }
+
+        session(['user' => $user]);
+
+        return response()->json([
+            'status' => 1,
+            'message' => '登录成功'
+        ]);
     }
 }

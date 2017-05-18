@@ -8,6 +8,10 @@
 					alert('请输入用户名')
 					return
 				}
+				else if (!/^[0-9a-zA-Z]{4,16}$/.test($('[name="username"]').val())) {
+					alert('用户名格式不正确，只能输入英文或数字，且必须大于4位或小于16位')
+					return
+				}
 				else if (!$('[name="telephone"]').val()) {
 					alert('请输入手机号')
 					return

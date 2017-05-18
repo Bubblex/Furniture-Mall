@@ -1,5 +1,37 @@
 @extends('master.mall')
 
+@section('page-script')
+	<script>
+		$(function() {
+      $('#login-form').on('submit', function(e) {
+        e.preventDefault()
+
+        if (!$('[name="username"]').val()) {
+          alert('请输入用户名')
+          return
+        }
+        else if (!$('[name="password"]').val()) {
+          alert('请输入密码')
+          return
+        }
+
+        $.ajax({
+          url: '/account/login',
+          type: 'POST',
+					data: $('#login-form').serialize(),
+          success: function(data) {
+            alert(data.message)
+
+            if (data.status === 1) {
+              window.location.href = '/'
+            }
+          }
+        })
+      })
+    })
+  </script>
+@endsection
+
 @section('header')
 <div class="header">
   <div class="container">
@@ -27,15 +59,15 @@
               </div>
               <div class="col-md-6 login-right">
                 <h3>登录</h3>
-                <p>If you have an account with us, please log in.</p>
-                <form>
+                <p>如果你已有账户，请登录</p>
+                <form id="login-form">
                   <div>
                     <span>账号<label>*</label></span>
-                    <input type="text">
+                    <input type="text" name="username">
                   </div>
                   <div>
                     <span>密码<label>*</label></span>
-                    <input type="text">
+                    <input type="password" name="password">
                   </div>
                   <input type="submit" value="登录">
                 </form>
