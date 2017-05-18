@@ -108,4 +108,10 @@ class AccountController extends Controller
             'message' => '登录成功'
         ]);
     }
+
+    public function logout(Request $request) {
+        $request->session()->flush();
+
+        return redirect('/account/login');
+    }
 }

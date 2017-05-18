@@ -23,6 +23,18 @@ Route::get('/', 'IndexController@homePage');
  */
 Route::group(['prefix' => 'account'], function() {
     /**
+     * 注册页
+     * 访问地址：/account/register
+     */
+    Route::get('register', 'AccountController@registerPage');
+
+    /**
+     * 注册接口
+     * 访问地址：/account/register
+     */
+    Route::post('register', 'AccountController@register');
+
+    /**
      * 登录页
      * 访问地址：/account/login
      */
@@ -35,16 +47,10 @@ Route::group(['prefix' => 'account'], function() {
     Route::post('login', 'AccountController@login');
 
     /**
-     * 注册页
-     * 访问地址：/account/register
+     * 退出登录
+     * 访问地址：/account/logout
      */
-    Route::get('register', 'AccountController@registerPage');
-
-    /**
-     * 注册接口
-     * 访问地址：/account/register
-     */
-    Route::post('register', 'AccountController@register');
+    Route::get('logout', 'AccountController@logout');
 });
 
 Route::group(['prefix' => 'user'], function() {

@@ -12,10 +12,12 @@
 			</div>
 
 			<div class="header_right">
-				<div class="lang_list">
-					<a href="/user/order" style='color: #fff'>个人中心</a> |
-					<a href="/account/login" style='color: #fff'>退出登录</a>
-				</div>
+				@if (session('user'))
+					<div class="lang_list">
+						<a href="/user/order" style='color: #fff'>个人中心</a> |
+						<a href="/account/logout" style='color: #fff'>退出登录</a>
+					</div>
+				@endif
 				<div class="clearfix"></div>
 			</div>
 
@@ -24,11 +26,13 @@
 
 		<div class="banner_wrap">
 			<div class="bannertop_box">
-				<ul class="login">
-					<li class="login_text"><a href="/account/login">登录</a></li>
-					<li class="wish"><a href="/account/register">注册</a></li>
-					<div class='clearfix'></div>
-				</ul>
+				@if (!session('user'))
+					<ul class="login">
+						<li class="login_text"><a href="/account/login">登录</a></li>
+						<li class="wish"><a href="/account/register">注册</a></li>
+						<div class='clearfix'></div>
+					</ul>
+				@endif
 				<div class="cart_bg">
 					<ul class="cart">
 						<a href="checkout.html">

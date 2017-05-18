@@ -22,7 +22,7 @@ class GoodsTypeRepository
     }
 
     /**
-     * 根据状态来获取列表
+     * 根据状态获取列表
      *
      * @param [type] $status
      * @return void
@@ -36,7 +36,7 @@ class GoodsTypeRepository
      *
      * @return void
      */
-    public function getNormalTypes() {
+    public function getNormalGoodsTypes() {
         return $this->getGoodsTypesByStatus(1);
     }
 }

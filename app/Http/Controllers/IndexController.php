@@ -23,7 +23,7 @@ class IndexController extends Controller
      * @return void
      */
     public function homePage() {
-        $goodsTypes = $this->goodsType->getNormalTypes();
+        $goodsTypes = $this->goodsType->getNormalGoodsTypes();
 
         return view('home.index')->with([
             'goodsTypes' => $goodsTypes
