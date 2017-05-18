@@ -35,6 +35,12 @@ Route::group(['prefix' => 'account'], function() {
      * 访问地址：/account/register
      */
     Route::get('register', 'AccountController@registerPage');
+
+    /**
+     * 注册接口
+     * 访问地址：/account/register
+     */
+    Route::post('register', 'AccountController@register');
 });
 
 Route::group(['prefix' => 'user'], function() {

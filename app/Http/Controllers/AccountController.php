@@ -7,8 +7,19 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Repositories\UserRepository;
+use App\Repositories\UserAddressRepository;
+
 class AccountController extends Controller
 {
+    protected $user;
+    protected $userAddress;
+
+    public function __construct(UserRepository $user, UserAddressRepository $userAddress) {
+        $this->user = $user;
+        $this->userAddress = $userAddress;
+    }
+
     /**
      * 注册页
      *
@@ -25,7 +36,30 @@ class AccountController extends Controller
      * @return void
      */
     public function register(Request $request) {
+        $user = $this->user->byUsername($request->username);
 
+        if ($user) {
+            return response()->json([
+                'status' => 3,
+                'message' => '该用户已注册'
+            ]);
+        }
+
+        $user = $this->user->add($request->all());
+
+        if ($user) {
+            $this->userAddress->add($user->id, $request->address);
+            return response()->json([
+                'status' => 1,
+                'message' => '注册成功，请登录'
+            ]);
+        }
+        else {
+            return response()->json([
+                'status' => 2,
+                'message' => '注册失败，请稍后再试'
+            ]);
+        }
     }
 
     /**
