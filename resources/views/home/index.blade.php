@@ -72,12 +72,9 @@
 					<div class="menu_box">
 						<h3 class="menu_head">分类</h3>
 						<ul class="nav">
-							<li><a href="/goods/list">起居室</a></li>
-							<li><a href="/goods/list">桌子</a></li>
-							<li><a href="/goods/list">沙发</a></li>
-							<li><a href="/goods/list">床</a></li>
-							<li><a href="/goods/list">椅子</a></li>
-							<li><a href="/goods/list">婴儿床</a></li>
+							@foreach($goodsTypes as $type)
+								<li><a href="/goods/list?id={{ $type->id }}">{{ $type->name }}</a></li>
+							@endforeach
 						</ul>
 					</div>
 				</div>

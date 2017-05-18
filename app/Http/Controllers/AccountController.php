@@ -36,7 +36,7 @@ class AccountController extends Controller
      * @return void
      */
     public function register(Request $request) {
-        $user = $this->user->byUsername($request->username);
+        $user = $this->user->getUserByUsername($request->username);
 
         if ($user) {
             return response()->json([
@@ -45,7 +45,7 @@ class AccountController extends Controller
             ]);
         }
 
-        $user = $this->user->add($request->all());
+        $user = $this->user->addGeneralUser($request->all());
 
         if ($user) {
             $this->userAddress->add($user->id, $request->address);
@@ -78,7 +78,7 @@ class AccountController extends Controller
      * @return void
      */
     public function login(Request $request) {
-        $user = $this->user->byUsername($request->username);
+        $user = $this->user->getGeneralUserByUsername($request->username);
 
         if (!$user) {
             return response()->json([
@@ -91,6 +91,13 @@ class AccountController extends Controller
             return response()->json([
                 'status' => 3,
                 'message' => '用户名或密码不正确'
+            ]);
+        }
+
+        if ($user->status != 1) {
+            return response()->json([
+                'status' => 4,
+                'message' => '用户已被禁用或无权限登录'
             ]);
         }
 

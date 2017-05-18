@@ -18,17 +18,30 @@ class UserRepository
      * @param [type] $account
      * @return void
      */
-    public function byUsername($username) {
+    public function getUserByUsername($username) {
         return $this->user->where('username', $username)->first();
     }
 
     /**
-     * 添加一个用户
+     * 通过用户名获取普通用户
+     *
+     * @param [type] $username
+     * @return void
+     */
+    public function getGeneralUserByUsername($username) {
+        return $this->user
+            ->where('username', $username)
+            ->where('role_id', 1)
+            ->first();
+    }
+
+    /**
+     * 添加一个普通用户
      *
      * @param array $addUser
      * @return void
      */
-    public function add($addUser) {
+    public function addGeneralUser($addUser) {
         $user = new User;
         $user->username = $addUser['username'];
         $user->password = md5($addUser['password']);

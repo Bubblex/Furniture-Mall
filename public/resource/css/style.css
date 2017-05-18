@@ -489,6 +489,7 @@ ul.nav{
 	list-style:none;
 	background:#68656A;
 }
+ul.nav li.active,
 ul.nav li:hover {
 	background:#333;
 	color:#fff;

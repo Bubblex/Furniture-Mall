@@ -15,9 +15,7 @@
 /**
  * 首页
  */
-Route::get('/', function() {
-    return view('home.index');
-});
+Route::get('/', 'IndexController@homePage');
 
 /**
  * 定义一个路由群组，并设置访问前缀为 account
