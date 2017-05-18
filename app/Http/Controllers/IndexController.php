@@ -8,12 +8,15 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Repositories\GoodsTypeRepository;
+use App\Repositories\GoodsRepository;
 
 class IndexController extends Controller
 {
+    protected $goods;
     protected $goodsType;
 
-    public function __construct(GoodsTypeRepository $goodsType) {
+    public function __construct(GoodsTypeRepository $goodsType, GoodsRepository $goods) {
+        $this->goods = $goods;
         $this->goodsType = $goodsType;
     }
 
@@ -24,9 +27,11 @@ class IndexController extends Controller
      */
     public function homePage() {
         $goodsTypes = $this->goodsType->getNormalGoodsTypes();
+        $newGoods = $this->goods->getGoodsOrderByTimeDesc(6);
 
         return view('home.index')->with([
-            'goodsTypes' => $goodsTypes
+            'goodsTypes' => $goodsTypes,
+            'newGoods' => $newGoods
         ]);
     }
 }
