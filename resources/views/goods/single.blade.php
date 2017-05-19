@@ -84,7 +84,7 @@
 								<span>&gt;</span>
 							</li>
 							<li class="home">&nbsp;
-								家具名称
+								{{ $goods->name }}
 							</li>
 						</ul>
 						<ul class="previous">
@@ -120,11 +120,11 @@
 								<div class="clearfix"></div>
 							</ul>
 							<div class="price_single">
-							  <span class="reducedfrom">RMB140.00</span>
-								<span class="amount item_price actual">RMB120.00</span><a href="#">优惠价</a>
+							  <span class="reducedfrom">￥{{ $goods->price }}</span>
+								<span class="amount item_price actual">￥{{ $goods->discount_price }}</span><a href="#">优惠价</a>
 							</div>
 							<h3 class="quick">产品简介</h3>
-							<p class="quick_desc"> 好好好好好好好好好好好好好好好好好好好好好好好好好好好</p>
+							<p class="quick_desc">{{ $goods->summary }}</p>
 			   		 	<ul class="size">
 								<h3>产品规格</h3>
 								<li><a href="javascript:">6 x 7</a></li>
@@ -154,41 +154,19 @@
 					<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 						<ul class="resp-tabs-list">
 							<li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>产品简介</span></li>
-							<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>产品简介</span></li>
-							<li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>产品简介</span></li>
+							{{-- <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>产品简介</span></li>
+							<li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>产品简介</span></li> --}}
 							<div class="clear"></div>
 						</ul>
-
-
 						<div class="resp-tabs-container">
 							<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
 								<div class="facts">
 									<ul class="tab_list">
-										<li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</a></li>
-										<li><a href="#">augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigatione</a></li>
-										<li><a href="#">claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica</a></li>
-										<li><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</a></li>
+										<li>
+											{!! $goods->detail !!}
+										</li>
 									</ul>
 								</div>
-							</div>
-
-							<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-								<div class="facts">
-									<ul class="tab_list">
-										<li><a href="#">augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigatione</a></li>
-										<li><a href="#">claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica</a></li>
-										<li><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</a></li>
-									</ul>
-								</div>
-							</div>	
-
-							<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
-								<ul class="tab_list">
-									<li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</a></li>
-									<li><a href="#">augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigatione</a></li>
-									<li><a href="#">claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores leg</a></li>
-									<li><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</a></li>
-								</ul>
 							</div>
 						</div>
 					</div>

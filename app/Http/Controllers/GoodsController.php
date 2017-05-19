@@ -37,4 +37,20 @@ class GoodsController extends Controller
             'goodsType' => $goodsType
         ]);
     }
+
+    /**
+     * 商品详情页
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function goodsDetailPage(Request $request) {
+        $id = $request->id;
+        $goods = $this->goods->getGoodsById($id);
+
+        return view('goods.single')->with([
+            'id' => $id,
+            'goods' => $goods
+        ]);
+    }
 }

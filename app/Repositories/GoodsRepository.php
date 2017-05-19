@@ -28,6 +28,19 @@ class GoodsRepository
     }
 
     /**
+     * 获取第一个最新的商品
+     *
+     * @param [type] $num
+     * @return void
+     */
+    public function getOneGoodsOrderByTimeDesc() {
+        return $this->goods
+            ->where('status', 1)
+            ->orderBy('created_at', 'desc')
+            ->first();
+    }
+
+    /**
      * 查询折扣最高的商品
      *
      * @return void
@@ -51,5 +64,17 @@ class GoodsRepository
         return $this->goods
             ->where('goods_type_id', $type)
             ->paginate($pageSize);
+    }
+
+    /**
+     * 通过 id 获取商品
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function getGoodsById($id) {
+        return $this->goods
+            ->where('status', 1)
+            ->find($id);
     }
 }

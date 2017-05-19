@@ -29,11 +29,13 @@ class IndexController extends Controller
         $goodsTypes = $this->goodsType->getNormalGoodsTypes();
         $newGoods = $this->goods->getGoodsOrderByTimeDesc(6);
         $discountGoods = $this->goods->getGoodsOrderByDiscountDesc(6);
+        $firstGoods = $this->goods->getOneGoodsOrderByTimeDesc();
 
         return view('home.index')->with([
             'goodsTypes' => $goodsTypes,
             'newGoods' => $newGoods,
-            'discountGoods' => $discountGoods
+            'discountGoods' => $discountGoods,
+            'firstGoods' => $firstGoods
         ]);
     }
 }

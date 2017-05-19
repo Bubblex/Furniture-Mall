@@ -49,7 +49,7 @@
 							{{-- BEGIN 一条商品 --}}
 							@foreach ($goods as $item)
 								<li class="simpleCart_shelfItem">
-									<a class="cbp-vm-image" href="/goods/single">
+									<a class="cbp-vm-image" href="/goods/single?id={{ $item->id }}">
 										<div class="inner_content clearfix">
 											<div class="product_image">
 												<img src="/resource/images/pic12.jpg" class="img-responsive" alt=""/>
@@ -64,10 +64,9 @@
 										</div>
 									</a>
 									<div class="cbp-vm-details">
-										商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
 										<p>销量：88</p>
 									</div>
-									<a class="button item_add cbp-vm-icon cbp-vm-add" href="javascript:">加入购物车</a>
+									<a class="button item_add cbp-vm-icon cbp-vm-add" href="javascript:">查看详情</a>
 								</li>
 							@endforeach
 							{{-- END 一条商品 --}}

@@ -56,9 +56,9 @@
 			</div>
 
 			<div class="banner_right">
-				<h1>文本标题 文本标题<br>副标题</h1>
-				<p>文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容</p>
-				<a href="/goods/single" class="banner_btn">立即购买</a>
+				<h1>{{ $firstGoods->name }}</h1>
+				<p>{{ $firstGoods->summary }}</p>
+				<a href="/goods/single?id={{ $firstGoods->id }}" class="banner_btn">立即购买</a>
 			</div>
 			<div class='clearfix'></div>
 
