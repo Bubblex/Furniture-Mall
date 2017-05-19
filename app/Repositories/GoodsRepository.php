@@ -2,6 +2,8 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Goods;
 
 class GoodsRepository
@@ -30,6 +32,19 @@ class GoodsRepository
         return $this->goods
             ->where('status', 1)
             ->orderBy('created_at', 'desc')
+            ->take($num)
+            ->get();
+    }
+
+    /**
+     * 查询折扣最高的商品
+     *
+     * @return void
+     */
+    public function getGoodsOrderByDiscountDesc($num) {
+        return $this->goods
+            ->select(DB::raw('*, (price - discount_price) as result'))
+            ->orderBy('result', 'desc')
             ->take($num)
             ->get();
     }

@@ -28,10 +28,12 @@ class IndexController extends Controller
     public function homePage() {
         $goodsTypes = $this->goodsType->getNormalGoodsTypes();
         $newGoods = $this->goods->getGoodsOrderByTimeDesc(6);
+        $discountGoods = $this->goods->getGoodsOrderByDiscountDesc(6);
 
         return view('home.index')->with([
             'goodsTypes' => $goodsTypes,
-            'newGoods' => $newGoods
+            'newGoods' => $newGoods,
+            'discountGoods' => $discountGoods
         ]);
     }
 }

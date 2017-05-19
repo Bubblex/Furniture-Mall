@@ -137,30 +137,29 @@
 
 
 				<h3 class="m_2">折扣</h3>
-				<div class="content_grid">
-
-
+				<div class="content_grid" style="margin-bottom: 3em">
 					{{-- BEGIN 一件商品 --}}
-					<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-						<a href="single.html">
-							<div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="/resource/images/pic1.jpg" class="img-responsive" alt=""/>
-									<a href="javascript:" class="button item_add item_1"> </a>
-									<div class="product_container">
-										<div class="cart-left">
-											<p class="title">商品名称</p>
+					@foreach ($discountGoods as $goods)
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<a href="single.html">
+								<div class="inner_content clearfix">
+									<div class="product_image">
+										<img src="/resource/images/pic1.jpg" class="img-responsive" alt=""/>
+										<a href="javascript:" class="button item_add item_1"> </a>
+										<div class="product_container">
+											<div class="cart-left">
+												<p class="title">{{ $goods->name }}</p>
+											</div>
+											<span class="amount item_price">￥{{ $goods->price }}</span>
+											<div class="clearfix"></div>
 										</div>
-										<span class="amount item_price">￥2300.00</span>
-										<div class="clearfix"></div>
 									</div>
 								</div>
-							</div>
-						</a>
-					</div>
+							</a>
+						</div>
+					@endforeach
 					{{-- END 一件商品 --}}
-
-
+					<div class="clearfix"></div>
 			  </div>
 			</div>
 		 </div>
