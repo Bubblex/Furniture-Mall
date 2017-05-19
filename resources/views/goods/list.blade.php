@@ -18,17 +18,13 @@
 	<div class="content_box">
 		<div class="container">
 			<div class="row">
-			
 				<div class="col-md-3">
 					<div class="menu_box">
 						<h3 class="menu_head">分类</h3>
 						<ul class="nav">
-							<li><a href="/goods/list">起居室</a></li>
-							<li><a href="/goods/list">桌子</a></li>
-							<li><a href="/goods/list">沙发</a></li>
-							<li><a href="/goods/list">床</a></li>
-							<li><a href="/goods/list">椅子</a></li>
-							<li><a href="/goods/list">婴儿床</a></li>
+							@foreach ($goodsType as $type)
+								<li class="{{ $id == $type->id ? 'active' : '' }}"><a href="/goods/list?id={{ $type->id }}">{{ $type->name }}</a></li>
+							@endforeach
 						</ul>
 					</div>
 			  </div>
@@ -48,35 +44,36 @@
 						</div>
 						<div class="clearfix"></div>
 					</div>
-					<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+					<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid" style="margin-bottom: 60px;">
 						<ul>
-
 							{{-- BEGIN 一条商品 --}}
-							<li class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="/goods/single">
-									<div class="inner_content clearfix">
-										<div class="product_image">
-											<img src="/resource/images/pic12.jpg" class="img-responsive" alt=""/>
-											<div class="product_container">
-												<div class="cart-left">
-												<p class="title">商品名称</p>
-											</div>
-											<div class="mount item_price price">￥99.00</div>
-											<div class="clearfix"></div>
+							@foreach ($goods as $item)
+								<li class="simpleCart_shelfItem">
+									<a class="cbp-vm-image" href="/goods/single">
+										<div class="inner_content clearfix">
+											<div class="product_image">
+												<img src="/resource/images/pic12.jpg" class="img-responsive" alt=""/>
+												<div class="product_container">
+													<div class="cart-left">
+													<p class="title">{{ $item->name }}</p>
+												</div>
+												<div class="mount item_price price">￥{{ $item->price }}</div>
+												<div class="clearfix"></div>
+												</div>
 											</div>
 										</div>
+									</a>
+									<div class="cbp-vm-details">
+										商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
+										<p>销量：88</p>
 									</div>
-								</a>
-								<div class="cbp-vm-details">
-									商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介
-									<p>销量：88</p>
-								</div>
-								<a class="button item_add cbp-vm-icon cbp-vm-add" href="javascript:">加入购物车</a>
-							</li>
+									<a class="button item_add cbp-vm-icon cbp-vm-add" href="javascript:">加入购物车</a>
+								</li>
+							@endforeach
 							{{-- END 一条商品 --}}
-						
 						</ul>
 					</div>
+					{!! $goods->appends(['id' => $id])->render() !!}
 				</div>
 			</div>
 		</div>

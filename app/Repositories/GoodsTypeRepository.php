@@ -13,15 +13,6 @@ class GoodsTypeRepository
     }
 
     /**
-     * 获取所有商品类型
-     *
-     * @return void
-     */
-    public function getAll() {
-        return $this->goodsType->get();
-    }
-
-    /**
      * 根据状态获取列表
      *
      * @param [type] $status

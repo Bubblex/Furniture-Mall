@@ -15,15 +15,6 @@ class GoodsRepository
     }
 
     /**
-     * 获取所有商品
-     *
-     * @return void
-     */
-    public function getAllGoods() {
-        return $this->goods->get();
-    }
-
-    /**
      * 按照时间倒序获取商品列表
      *
      * @return void
@@ -44,8 +35,21 @@ class GoodsRepository
     public function getGoodsOrderByDiscountDesc($num) {
         return $this->goods
             ->select(DB::raw('*, (price - discount_price) as result'))
+            ->where('status', 1)
             ->orderBy('result', 'desc')
             ->take($num)
             ->get();
+    }
+
+    /**
+     * 通过类型查询商品
+     *
+     * @param [type] $type
+     * @return void
+     */
+    public function getGoodsByType($type, $pageSize) {
+        return $this->goods
+            ->where('goods_type_id', $type)
+            ->paginate($pageSize);
     }
 }
