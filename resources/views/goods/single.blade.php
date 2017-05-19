@@ -56,16 +56,9 @@
 					<div class="menu_box">
 						<h3 class="menu_head">为您推荐</h3>
 						<ul class="nav">
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
-							<li><a href="/goods/single ">沙发巴拉巴拉巴拉</a></li>
+							@foreach ($recommendGoods as $item)
+								<li><a href="/goods/single?id={{ $item->id }}">{{ $item->name }}</a></li>
+							@endforeach
 						</ul>
 					</div>
 				</div>
@@ -80,7 +73,7 @@
 								<span>&gt;</span>
 							</li>
 							<li class="home">
-								<a href="/goods/list" title="Go to Home Page">产品所属分类</a>&nbsp;
+								<a href="/goods/list" title="Go to Home Page">{{ $goods->type->name }}</a>&nbsp;
 								<span>&gt;</span>
 							</li>
 							<li class="home">&nbsp;

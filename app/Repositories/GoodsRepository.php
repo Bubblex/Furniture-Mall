@@ -55,6 +55,19 @@ class GoodsRepository
     }
 
     /**
+     * 通过类型查询商品并按照固定数量获取
+     *
+     * @param [type] $num
+     * @return void
+     */
+    public function getGoodsByTypeWithNum($type, $num) {
+        return $this->goods
+            ->where('goods_type_id', $type)
+            ->take($num)
+            ->get();
+    }
+
+    /**
      * 通过类型查询商品
      *
      * @param [type] $type
@@ -75,6 +88,7 @@ class GoodsRepository
     public function getGoodsById($id) {
         return $this->goods
             ->where('status', 1)
+            ->with('type')
             ->find($id);
     }
 }

@@ -47,10 +47,12 @@ class GoodsController extends Controller
     public function goodsDetailPage(Request $request) {
         $id = $request->id;
         $goods = $this->goods->getGoodsById($id);
+        $recommendGoods = $this->goods->getGoodsByTypeWithNum($id, 10);
 
         return view('goods.single')->with([
             'id' => $id,
-            'goods' => $goods
+            'goods' => $goods,
+            'recommendGoods' => $recommendGoods
         ]);
     }
 }
