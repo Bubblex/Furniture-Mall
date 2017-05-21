@@ -83,4 +83,10 @@ Route::group(['prefix' => 'goods'], function() {
      * 访问地址：/goods/single
      */
     Route::get('single', 'GoodsController@goodsDetailPage');
+
+    /**
+     * 添加商品至购物车
+     * 访问地址：/goods/add/cart
+     */
+    Route::post('add/cart', 'GoodsController@addCart');
 });

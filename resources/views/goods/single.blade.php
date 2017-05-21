@@ -16,6 +16,7 @@
 @endsection
 
 @section('page-script')
+	@parent
   <script type="text/javascript">
     $(window).load(function() {
       $('.flexslider').flexslider({
@@ -111,19 +112,19 @@
 							</div>
 							<h3 class="quick">产品简介</h3>
 							<p class="quick_desc">{{ $goods->summary }}</p>
-			   		 	<ul class="size">
+			   		 	<ul class="size goods-norm">
 								<h3>产品规格</h3>
 								@foreach ($goods->norms as $item)
-									<li><a href="javascript:">{{ $item->name }}</a></li>
+									<li data-norm='{{ $item->name }}'><a href="javascript:">{{ $item->name }}</a></li>
 								@endforeach
 							</ul>
 							<ul class="product-qty">
 								<span>数量:</span>
-								<input placeholder='请输入购买数量'/>
+								<input class="goods-num" placeholder='请输入购买数量'/>
 							</ul>
 							<div class="btn_form button item_add item_1">
 				   		<form>
-					 			<input type="submit" value="加入购物车" title="">
+							<input type="submit" class="add-cart" data-id="{{ $goods->id }}" value="加入购物车" title="">
 				  		</form>
 						</div>
 					</div>

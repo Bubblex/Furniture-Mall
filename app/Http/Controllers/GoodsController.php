@@ -9,15 +9,18 @@ use App\Http\Controllers\Controller;
 
 use App\Repositories\GoodsRepository;
 use App\Repositories\GoodsTypeRepository;
+use App\Repositories\ShoppingCartRepository;
 
 class GoodsController extends Controller
 {
     protected $goods;
     protected $goodsType;
+    protected $shoppingCart;
 
-    public function __construct(GoodsRepository $goods, GoodsTypeRepository $goodsType) {
+    public function __construct(GoodsRepository $goods, GoodsTypeRepository $goodsType, ShoppingCartRepository $shoppingCart) {
         $this->goods = $goods;
         $this->goodsType = $goodsType;
+        $this->shoppingCart = $shoppingCart;
     }
 
     /**
@@ -53,6 +56,30 @@ class GoodsController extends Controller
             'id' => $id,
             'goods' => $goods,
             'recommendGoods' => $recommendGoods
+        ]);
+    }
+
+    /**
+     * 添加商品至购物车
+     *
+     * @param Reqeust $request
+     * @return void
+     */
+    public function addCart(Request $request) {
+        $goods = $this->goods->getGoodsById($request->id);
+
+        $cart = $this->shoppingCart->addGoods(session('user'), $goods, $request->norm, $request->num);
+
+        if (!$cart) {
+            return response()->json([
+                'status' => 0,
+                'message' => '添加至购物车失败'
+            ]);
+        }
+
+        return response()->json([
+            'status' => 1,
+            'message' => '成功添加该商品至购物车'
         ]);
     }
 }

@@ -9,7 +9,7 @@
 @section('vendor-script')
   @parent
   <script src="/resource/js/simpleCart.min.js"> </script>
-  <script src="/respirce/js/jquery.easydropdown.js"></script>
+  <script src="/resource/js/jquery.easydropdown.js"></script>
   <script src="/resource/js/jquery.magnific-popup.js" type="text/javascript"></script>
 @endsection
 
@@ -52,7 +52,7 @@
 									<a class="cbp-vm-image" href="/goods/single?id={{ $item->id }}">
 										<div class="inner_content clearfix">
 											<div class="product_image">
-												<img src="/resource/images/pic12.jpg" class="img-responsive" alt=""/>
+												<img src="{{ $item->images[0]->url }}" class="img-responsive" alt=""/>
 												<div class="product_container">
 													<div class="cart-left">
 													<p class="title">{{ $item->name }}</p>

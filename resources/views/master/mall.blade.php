@@ -18,11 +18,18 @@
 {{-- 定义项目中通用的脚本 --}}
 @section('required-script')
   <script src="/resource/js/jquery.min.js"></script>
+  <script>
+    var is_login = '{{ empty(session('user')) }}' ? false : true
+  </script>
 @endsection
 
 @section('vendor-script')
   <script src="/resource/js/jquery.easydropdown.js"></script>
   <script src="/resource/js/jquery.magnific-popup.js" type="text/javascript"></script>
+@endsection
+
+@section('page-script')
+  <script src="/resource/js/app.js"></script>
 @endsection
 
 {{-- 定义通用的头部 --}}
