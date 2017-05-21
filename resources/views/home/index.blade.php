@@ -92,7 +92,7 @@
 							<a href="/goods/single?id={{ $goods->id }}">
 								<div class="inner_content clearfix">
 									<div class="product_image">
-										<img src="/resource/images/pic2.jpg" class="img-responsive" alt=""/>
+										<img src="{{ $goods->images[0]->url }}" class="img-responsive" alt=""/>
 										{{-- <a href="javascript:" class="button item_add item_1"> </a> --}}
 										<div class="product_container">
 											<div class="cart-left">
@@ -141,11 +141,10 @@
 					{{-- BEGIN 一件商品 --}}
 					@foreach ($discountGoods as $goods)
 						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-							<a href="single.html">
+							<a href="/goods/single?id={{ $goods->id }}">
 								<div class="inner_content clearfix">
 									<div class="product_image">
-										<img src="/resource/images/pic1.jpg" class="img-responsive" alt=""/>
-										<a href="javascript:" class="button item_add item_1"> </a>
+										<img src="{{ $goods->images[0]->url }}" class="img-responsive" alt=""/>
 										<div class="product_container">
 											<div class="cart-left">
 												<p class="title">{{ $goods->name }}</p>
