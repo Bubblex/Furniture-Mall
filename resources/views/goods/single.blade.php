@@ -92,23 +92,16 @@
 						<div class="labout span_1_of_a1">
 							<div class="flexslider">
 								<ul class="slides">
-									<li data-thumb="/resource/images/s1.jpg">
-										<img src="/resource/images/s1.jpg" />
-									</li>
-									<li data-thumb="/resource/images/s2.jpg">
-										<img src="/resource/images/s2.jpg" />
-									</li>
-									<li data-thumb="/resource/images/s3.jpg">
-										<img src="/resource/images/s3.jpg" />
-									</li>
-									<li data-thumb="/resource/images/s4.jpg">
-										<img src="/resource/images/s4.jpg" />
-									</li>
+									@foreach ($goods->images as $item)
+										<li data-thumb="{{ $item->url }}">
+											<img src="{{ $item->url }}" alt="{{ $item->name }}" />
+										</li>
+									@endforeach
 								</ul>
 							</div>
 						</div>
 						<div class="cont1 span_2_of_a1 simpleCart_shelfItem">
-							<h1>家具名称</h1>
+							<h1>{{ $goods->name }}</h1>
 							<ul class="rating">
 								<div class="clearfix"></div>
 							</ul>
@@ -120,12 +113,9 @@
 							<p class="quick_desc">{{ $goods->summary }}</p>
 			   		 	<ul class="size">
 								<h3>产品规格</h3>
-								<li><a href="javascript:">6 x 7</a></li>
-								<li><a href="javascript:">6.5 x 7</a></li>
-								<li><a href="javascript:">7 x 7</a></li>
-								<li><a href="javascript:">7.7 x 9</a></li>
-								<li><a href="javascript:">11 x 8</a></li>
-								<li><a href="javascript:">12 x 7</a></li>
+								@foreach ($goods->norms as $item)
+									<li><a href="javascript:">{{ $item->name }}</a></li>
+								@endforeach
 							</ul>
 							<ul class="product-qty">
 								<span>数量:</span>

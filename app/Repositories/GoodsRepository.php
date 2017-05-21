@@ -22,6 +22,7 @@ class GoodsRepository
     public function getGoodsOrderByTimeDesc($num) {
         return $this->goods
             ->where('status', 1)
+            ->with('images')
             ->orderBy('created_at', 'desc')
             ->take($num)
             ->get();
@@ -49,6 +50,7 @@ class GoodsRepository
         return $this->goods
             ->select(DB::raw('*, (price - discount_price) as result'))
             ->where('status', 1)
+            ->with('images')
             ->orderBy('result', 'desc')
             ->take($num)
             ->get();
@@ -63,6 +65,7 @@ class GoodsRepository
     public function getGoodsByTypeWithNum($type, $num) {
         return $this->goods
             ->where('goods_type_id', $type)
+            ->with('images')
             ->take($num)
             ->get();
     }
@@ -76,6 +79,7 @@ class GoodsRepository
     public function getGoodsByType($type, $pageSize) {
         return $this->goods
             ->where('goods_type_id', $type)
+            ->with('images')
             ->paginate($pageSize);
     }
 
@@ -89,6 +93,8 @@ class GoodsRepository
         return $this->goods
             ->where('status', 1)
             ->with('type')
+            ->with('images')
+            ->with('norms')
             ->find($id);
     }
 }

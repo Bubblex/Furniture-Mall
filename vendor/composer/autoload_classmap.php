@@ -26,6 +26,8 @@ return array(
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
+    'GoodsImagesSeeder' => $baseDir . '/database/seeds/GoodsImagesSeeder.php',
+    'GoodsNormsTableSeeder' => $baseDir . '/database/seeds/GoodsNormsTableSeeder.php',
     'GoodsTableSeeder' => $baseDir . '/database/seeds/GoodsTableSeeder.php',
     'GoodsTypesTableSeeder' => $baseDir . '/database/seeds/GoodsTypesTableSeeder.php',
     'Hamcrest\\Arrays\\IsArray' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',

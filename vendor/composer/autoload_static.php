@@ -350,6 +350,8 @@ class ComposerStaticInite99a8f0a379f44b73c5fabe858b0014d
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'GoodsImagesSeeder' => __DIR__ . '/../..' . '/database/seeds/GoodsImagesSeeder.php',
+        'GoodsNormsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/GoodsNormsTableSeeder.php',
         'GoodsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/GoodsTableSeeder.php',
         'GoodsTypesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/GoodsTypesTableSeeder.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',

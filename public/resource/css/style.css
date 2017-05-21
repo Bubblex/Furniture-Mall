@@ -1075,7 +1075,11 @@ ul.size h3{
 }
 ul.size li {
 	display: inline-block;
-	margin: 0 10px 0 0;
+	margin: 0 10px 10px 0;
+}
+ul.size li.active a {
+	color: #fff;
+	background-color: #31c2db;
 }
 ul.size li a {
 	color: #555;
