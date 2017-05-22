@@ -61,6 +61,12 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
     Route::get('shopping-cart', 'GoodsController@shoppingCartPage');
 
     /**
+     * 删除购物车中的商品
+     * 访问地址：/user/delete/cart
+     */
+    Route::post('delete/cart', 'GoodsController@deleteShoppingCart');
+
+    /**
      * 我的订单页
      * 访问地址：/user/order
      */

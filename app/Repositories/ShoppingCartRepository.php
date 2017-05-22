@@ -36,4 +36,14 @@ class ShoppingCartRepository
 
         return $cart;
     }
+
+    /**
+     * 删除
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function delete($id) {
+        return $this->shoppingCart->destroy($id);
+    }
 }

@@ -5,20 +5,37 @@
 	<div class="container">
 		<div class="check_box">
 			<div class="col-md-9 cart-items">
-				<h1>我的购物车({{ count($carts) }})</h1>
+				<h1>我的购物车(<span class="cart-count">{{ count($carts) }}</span>)</h1>
 				<script>
 					$(document).ready(function(c) {
-						$('.close2').on('click', function(c){
-							$('.cart-header2').fadeOut('slow', function(c){
-								$('.cart-header2').remove();
-							});
+						$('.close2').on('click', function(c) {
+							var $this = $(this)
+
+							$.ajax({
+								url: '/user/delete/cart',
+								type: 'post',
+								data: {
+									id: $this.attr('data-id')
+								},
+								success: function(data) {
+									if (data.status === 1) {
+										$this.parent().fadeOut('slow', function(c){
+											$this.remove()
+											$('.cart-count').text(parseInt($('.cart-count').text()) - 1)
+										});
+									}
+									else {
+										alert(data.message)
+									}
+								}
+							})
 						});
 					});
 				</script>
 				<!--购物车内一条数据-->
 				@foreach ($carts as $item)
 					<div class="cart-header2">
-						<div class="close2"> </div>
+						<div data-id="{{ $item->id }}" class="close2"></div>
 						<div class="cart-sec simpleCart_shelfItem">
 							<div class="cart-item cyc">
 								<img src="{{ $item->goods->images[0]->url }}" class="img-responsive" alt="">
@@ -34,7 +51,7 @@
 								</ul>
 								<div class="delivery">
 									<p>价格 : ￥{{ $item->goods->price }}</p>
-									<p>折扣 : {{ $item->goods->discount_price }}</p>
+									<p>折扣 : ￥{{ $item->goods->discount_price }}</p>
 									<div class="clearfix"></div>
 								</div>
 							</div>
@@ -45,13 +62,13 @@
 			</div>
 			<!--右侧价格结算-->
 			<div class="col-md-3 cart-total">
-				<a class="continue" href="#">再逛逛</a>
+				<a class="continue" href="/">再逛逛</a>
 				<div class="price-details">
 					<h3>价格清单</h3>
 					<span>原价共计</span>
 					<span class="total1">{{ $price }}</span>
 					<span>件数</span>
-					<span class="total1">{{ $item->sum('num') }}</span>
+					<span class="total1">{{ $carts->sum('num') }}</span>
 					<span>优惠</span>
 					<span class="total1">{{ $price - $discount }}</span>
 					<div class="clearfix"></div>

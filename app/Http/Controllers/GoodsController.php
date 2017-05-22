@@ -90,6 +90,11 @@ class GoodsController extends Controller
         ]);
     }
 
+    /**
+     * 购物车页面
+     *
+     * @return void
+     */
     public function shoppingCartPage() {
         $id = session('user')->id;
 
@@ -106,6 +111,22 @@ class GoodsController extends Controller
             'carts' => $user->cart,
             'price' => $price,
             'discount' => $discount
+        ]);
+    }
+
+    public function deleteShoppingCart(Request $request) {
+        $result = $this->shoppingCart->delete($request->id);
+
+        if (!$result) {
+            return response()->json([
+                'status' => 0,
+                'message' => '删除失败'
+            ]);
+        }
+
+        return response()->json([
+            'status' => 1,
+            'message' => ''
         ]);
     }
 }
