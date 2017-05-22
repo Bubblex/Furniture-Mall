@@ -5,94 +5,60 @@
 	<div class="container">
 		<div class="check_box">
 			<div class="col-md-9 cart-items">
-				<h1>我的购物车(2)</h1>
-
-				<!--购物车内一条数据-->
+				<h1>我的购物车({{ count($carts) }})</h1>
 				<script>
-				$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
+					$(document).ready(function(c) {
+						$('.close2').on('click', function(c){
+							$('.cart-header2').fadeOut('slow', function(c){
+								$('.cart-header2').remove();
+							});
 						});
 					});
-				});
-				</script>
-				
-				<div class="cart-header">
-					<div class="close1"> </div>
-					<div class="cart-sec simpleCart_shelfItem">
-						<div class="cart-item cyc">
-							<img src="/resource/images/pic1.jpg" class="img-responsive" alt="">
-						</div>
-						<div class="cart-item-info">
-							<h3>
-								<a href="javascript:">家具名称</a>
-								<span>家具编号: 3578</span>
-							</h3>
-							<ul class="qty">
-								<li><p>订单编号 : 5</p></li>
-							</ul>
-							<ul class="qty">
-								<li><p>规格 : 5</p></li>
-								<li><p>数量 : 1</p></li>
-							</ul>
-							<ul class="qty">
-								<li><p>原价 : 5</p></li>
-								<li><p>实付 : 1</p></li>
-							</ul>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-				<script>
-				$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-						$('.cart-header2').fadeOut('slow', function(c){
-							$('.cart-header2').remove();
-						});
-					});
-				});
 				</script>
 				<!--购物车内一条数据-->
-				<div class="cart-header2">
-					<div class="close2"> </div>
-					<div class="cart-sec simpleCart_shelfItem">
-						<div class="cart-item cyc">
-							<img src="/resource/images/pic2.jpg" class="img-responsive" alt="">
-						</div>
-						<div class="cart-item-info">
-							<h3><a href="#">家具名称</a><span>家具编号: 3578</span></h3>
-							<ul class="qty">
-								<li><p>规格 : 5</p></li>
-								<li><p>数量 : 1</p></li>
-							</ul>
-							<div class="delivery">
-								<p>价格 : 10000RMB</p>
-								<p>折扣 : 100RMB</p>
-								<div class="clearfix"></div>
+				@foreach ($carts as $item)
+					<div class="cart-header2">
+						<div class="close2"> </div>
+						<div class="cart-sec simpleCart_shelfItem">
+							<div class="cart-item cyc">
+								<img src="{{ $item->goods->images[0]->url }}" class="img-responsive" alt="">
 							</div>
+							<div class="cart-item-info">
+								<h3>
+									<a href="#">{{ $item->goods->name }}</a>
+									<span>家具编号: {{ $item->goods->id }}</span>
+								</h3>
+								<ul class="qty">
+									<li><p>规格 : {{ $item->norm }}</p></li>
+									<li><p>数量 : {{ $item->num }}</p></li>
+								</ul>
+								<div class="delivery">
+									<p>价格 : ￥{{ $item->goods->price }}</p>
+									<p>折扣 : {{ $item->goods->discount_price }}</p>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
 						</div>
-						<div class="clearfix"></div>
 					</div>
-				</div>
+				@endforeach
 			</div>
-
 			<!--右侧价格结算-->
 			<div class="col-md-3 cart-total">
 				<a class="continue" href="#">再逛逛</a>
 				<div class="price-details">
 					<h3>价格清单</h3>
 					<span>原价共计</span>
-					<span class="total1">6200.00</span>
+					<span class="total1">{{ $price }}</span>
 					<span>件数</span>
-					<span class="total1">3</span>
+					<span class="total1">{{ $item->sum('num') }}</span>
 					<span>优惠</span>
-					<span class="total1">150.00</span>
+					<span class="total1">{{ $price - $discount }}</span>
 					<div class="clearfix"></div>
 				</div>
 				<ul class="total_price">
 					<li class="last_price"> <h4>折扣后共计</h4></li>
-					<li class="last_price"><span>6350.00</span></li>
+					<li class="last_price"><span>{{ $discount }}</span></li>
 					<div class="clearfix"> </div>
 				</ul>
 				<div class="clearfix"></div>

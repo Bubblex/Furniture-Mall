@@ -35,6 +35,10 @@ class UserRepository
             ->first();
     }
 
+    public function byId($id) {
+        return $this->user->find($id);
+    }
+
     /**
      * 添加一个普通用户
      *

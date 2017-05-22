@@ -53,14 +53,12 @@ Route::group(['prefix' => 'account'], function() {
     Route::get('logout', 'AccountController@logout');
 });
 
-Route::group(['prefix' => 'user'], function() {
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
     /**
      * 我的购物车页
      * 访问地址：/user/shopping-cart
      */
-    Route::get('shopping-cart', function() {
-        return view('user.shopping-cart');
-    });
+    Route::get('shopping-cart', 'GoodsController@shoppingCartPage');
 
     /**
      * 我的订单页

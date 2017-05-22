@@ -7,17 +7,24 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Repositories\UserRepository;
 use App\Repositories\GoodsRepository;
 use App\Repositories\GoodsTypeRepository;
 use App\Repositories\ShoppingCartRepository;
 
 class GoodsController extends Controller
 {
+    protected $user;
     protected $goods;
     protected $goodsType;
     protected $shoppingCart;
 
-    public function __construct(GoodsRepository $goods, GoodsTypeRepository $goodsType, ShoppingCartRepository $shoppingCart) {
+    public function __construct(
+        GoodsRepository $goods,
+        GoodsTypeRepository $goodsType,
+        ShoppingCartRepository $shoppingCart,
+        UserRepository $user) {
+        $this->user = $user;
         $this->goods = $goods;
         $this->goodsType = $goodsType;
         $this->shoppingCart = $shoppingCart;
@@ -80,6 +87,25 @@ class GoodsController extends Controller
         return response()->json([
             'status' => 1,
             'message' => '成功添加该商品至购物车'
+        ]);
+    }
+
+    public function shoppingCartPage() {
+        $id = session('user')->id;
+
+        $user = $this->user->byId($id);
+        $price = 0;
+        $discount = 0;
+
+        foreach ($user->cart as $item) {
+            $price += $item->num * $item->goods->price;
+            $discount += $item->num * $item->goods->discount_price;
+        }
+
+        return view('user.shopping-cart')->with([
+            'carts' => $user->cart,
+            'price' => $price,
+            'discount' => $discount
         ]);
     }
 }
