@@ -18,14 +18,10 @@
 									id: $this.attr('data-id')
 								},
 								success: function(data) {
+									alert(data.message)
+
 									if (data.status === 1) {
-										$this.parent().fadeOut('slow', function(c){
-											$this.remove()
-											$('.cart-count').text(parseInt($('.cart-count').text()) - 1)
-										});
-									}
-									else {
-										alert(data.message)
+										window.location.reload()
 									}
 								}
 							})

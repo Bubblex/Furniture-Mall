@@ -74,7 +74,7 @@
 								<span>&gt;</span>
 							</li>
 							<li class="home">
-								<a href="/goods/list" title="Go to Home Page">{{ $goods->type->name }}</a>&nbsp;
+								<a href="/goods/list?id={{ $goods->type->id }}" title="Go to Home Page">{{ $goods->type->name }}</a>&nbsp;
 								<span>&gt;</span>
 							</li>
 							<li class="home">&nbsp;

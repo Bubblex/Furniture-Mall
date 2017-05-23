@@ -12,4 +12,8 @@ class User extends Model
     public function cart() {
         return $this->hasMany('App\Models\ShoppingCart');
     }
+
+    public function order() {
+        return $this->hasMany('App\Models\Order');
+    }
 }

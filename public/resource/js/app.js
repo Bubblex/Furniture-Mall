@@ -4,6 +4,7 @@ $(function() {
 
         if (!is_login) {
             alert('请先登录')
+            return
         }
 
         var id = $(this).attr('data-id');

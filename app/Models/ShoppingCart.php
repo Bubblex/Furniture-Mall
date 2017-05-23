@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ShoppingCart extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'shopping_carts';
     protected $dates = ['deleted_at'];
 

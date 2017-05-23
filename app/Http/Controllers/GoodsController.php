@@ -129,4 +129,24 @@ class GoodsController extends Controller
             'message' => ''
         ]);
     }
+
+    public function orderPage() {
+        $id = session('user')->id;
+
+        $user = $this->user->byId($id);
+
+        $price = 0;
+        $discount = 0;
+
+        foreach ($user->order as $item) {
+            $price += $item->num * $item->goods->price;
+            $discount += $item->num * $item->goods->discount_price;
+        }
+
+        return view('user.order')->with([
+            'orders' => $user->order,
+            'price' => $price,
+            'discount' => $discount
+        ]);
+    }
 }

@@ -70,9 +70,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
      * 我的订单页
      * 访问地址：/user/order
      */
-    Route::get('order', function() {
-        return view('user.order');
-    });
+    Route::get('order', 'GoodsController@orderPage');
 });
 
 Route::group(['prefix' => 'goods'], function() {
