@@ -94,7 +94,7 @@ class AccountController extends Controller
             ]);
         }
 
-        if ($user->status != 1) {
+        if ($user->status != 1 || $user->role_id != 1) {
             return response()->json([
                 'status' => 4,
                 'message' => '用户已被禁用或无权限登录'

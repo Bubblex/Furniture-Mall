@@ -26,5 +26,14 @@ class UsersTableSeeder extends Seeder
             'money' => 10000,
             'password' => md5('123456')
         ]);
+
+        DB::table('users')->insert([
+            'username' => 'admin',
+            'telephone' => '15152111900',
+            'email' => 'i@kassading.com',
+            'money' => 10000,
+            'role_id' => 2,
+            'password' => md5('123456')
+        ]);
     }
 }

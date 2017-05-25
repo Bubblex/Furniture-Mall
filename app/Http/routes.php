@@ -104,3 +104,28 @@ Route::group(['prefix' => 'goods'], function() {
      */
     Route::post('add/cart', 'GoodsController@addCart');
 });
+
+Route::group(['prefix' => 'admin'], function() {
+    /**
+     * 后台登录页
+     * 访问地址：/admin/login
+     */
+    Route::get('login', 'AdminController@loginPage');
+
+    /**
+     * 后台登录接口
+     * 访问地址：/admin/login
+     */
+    Route::post('login', 'AdminController@login');
+
+    /**
+     * 必须登录
+     */
+    Route::group(['middleware' => 'admin'], function() {
+        /**
+         * 后台首页
+         * 访问地址：/admin
+         */
+        Route::get('', 'AdminController@adminHomePage');
+    });
+});
