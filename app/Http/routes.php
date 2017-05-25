@@ -77,6 +77,12 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
      * 访问地址：/user/pay
      */
     Route::post('pay', 'GoodsController@pay');
+
+    /**
+     * 删除订单商品
+     * 访问地址：/user/delete/order
+     */
+    Route::post('delete/order', 'GoodsController@deleteOrder');
 });
 
 Route::group(['prefix' => 'goods'], function() {

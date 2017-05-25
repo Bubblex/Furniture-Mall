@@ -35,8 +35,6 @@ class IndexController extends Controller
         $firstGoods = $this->goods->getOneGoodsOrderByTimeDesc();
         $hotGoods = $this->order->most();
 
-        dd($hotGoods->toJson());
-
         return view('home.index')->with([
             'goodsTypes' => $goodsTypes,
             'newGoods' => $newGoods,

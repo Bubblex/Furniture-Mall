@@ -41,4 +41,8 @@ class OrderRepository
             ->orderBy('hot_count')
             ->get();
     }
+
+    public function delete($id) {
+        return $this->order->destory($id);
+    }
 }

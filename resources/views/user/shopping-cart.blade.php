@@ -33,7 +33,10 @@
 								type: 'post',
 								success: function(data) {
 									alert(data.message)
-									window.location.href = '/user/order'
+
+									if (data.status === 1) {
+										window.location.href = '/user/order'
+									}
 								}
 							})
 						})

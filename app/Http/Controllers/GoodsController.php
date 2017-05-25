@@ -170,15 +170,46 @@ class GoodsController extends Controller
         $user = $this->user->byId($id);
         $carts = $user->cart;
 
+        $price = 0;
+        $discount = 0;
+
+        foreach ($carts as $item) {
+            $price += $item->num * $item->goods->price;
+            $discount += $item->num * $item->goods->discount_price;
+        }
+
+        if ($discount > $user->money) {
+            return response()->json([
+                'status' => 2,
+                'message' => '账户余额不足，购买失败'
+            ]);
+        }
+
         foreach ($carts as $cart) {
             $goods = $this->goods->getGoodsById($cart->goods_id);
             $this->order->add($cart, $goods->price, $goods->discount_price);
             $this->shoppingCart->delete($cart->id);
         }
 
+        $user->money = $user->money - $discount;
+        $user->save();
+
+        session(['user' => $user]);
+
         return response()->json([
             'status' => 1,
             'message' => '支付成功'
+        ]);
+    }
+
+    public function deleteOrder(Request $request) {
+        $id = $request->id;
+
+        $this->order->delete($id);
+
+        return response()->json([
+            'status' => 1,
+            'message' => '删除成功',
         ]);
     }
 }

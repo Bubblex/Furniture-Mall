@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
             'username' => 'Jarvis',
             'telephone' => '15152111900',
             'email' => 'i@kassading.com',
+            'money' => 1000,
             'password' => md5('123456')
         ]);
 
@@ -22,6 +23,7 @@ class UsersTableSeeder extends Seeder
             'username' => 'AshenOne',
             'telephone' => '15152111900',
             'email' => 'i@kassading.com',
+            'money' => 10000,
             'password' => md5('123456')
         ]);
     }

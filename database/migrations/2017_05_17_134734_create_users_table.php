@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('telephone')->comment('手机号');
             $table->string('email')->comment('邮箱');
             $table->string('password')->comment('密码');
+            $table->double('money')->default(0.0)->comment('金额');
             $table->integer('role_id')->unsigned()->default(1)->comment('所属角色');
             $table->integer('status')->default(1)->comment('账号状态 1: 正常 2: 已禁用');
             $table->timestamps();

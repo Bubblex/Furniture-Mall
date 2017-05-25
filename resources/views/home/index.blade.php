@@ -14,6 +14,7 @@
 			<div class="header_right">
 				@if (session('user'))
 					<div class="lang_list">
+						<span style="color: #fff">账户余额：{{ session('user')->money }}</span> |
 						<a href="/user/order" style='color: #fff'>个人中心</a> |
 						<a href="/account/logout" style='color: #fff'>退出登录</a>
 					</div>
@@ -114,16 +115,16 @@
 				<div class="content_grid">
 					@foreach ($hotGoods as $goods)
 						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-							<a href="/goods/single?id={{ $goods->id }}">
+							<a href="/goods/single?id={{ $goods->goods['id'] }}">
 								<div class="inner_content clearfix">
 									<div class="product_image">
-										<img src="{{ $goods->images[0]->url }}" class="img-responsive" alt=""/>
+										<img src="{{ $goods->goods['images'][0]->url }}" class="img-responsive" alt=""/>
 										{{-- <a href="javascript:" class="button item_add item_1"> </a> --}}
 										<div class="product_container">
 											<div class="cart-left">
-												<p class="title">{{ $goods->name }}</p>
+												<p class="title">{{ $goods->goods['name'] }}</p>
 											</div>
-											<span class="amount item_price">￥{{ $goods->price }}</span>
+											<span class="amount item_price">￥{{ $goods->goods['price'] }}</span>
 											<div class="clearfix"></div>
 										</div>
 									</div>

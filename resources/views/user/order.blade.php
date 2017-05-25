@@ -12,7 +12,7 @@
 							var $this = $(this)
 
 							$.ajax({
-								url: '/user/delete/cart',
+								url: '/user/delete/order',
 								type: 'post',
 								data: {
 									id: $this.attr('data-id')
