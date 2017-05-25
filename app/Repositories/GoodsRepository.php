@@ -97,4 +97,13 @@ class GoodsRepository
             ->with('norms')
             ->find($id);
     }
+
+    /**
+     * 获取所有商品
+     *
+     * @return void
+     */
+    public function all() {
+        return $this->goods->get();
+    }
 }

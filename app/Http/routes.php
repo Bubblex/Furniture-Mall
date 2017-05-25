@@ -128,6 +128,12 @@ Route::group(['prefix' => 'admin'], function() {
          */
         Route::get('index', 'AdminController@homePage');
 
+        /**
+         * 个人资料
+         * 访问地址：/admin/info
+         */
+        Route::get('info', 'AdminController@infoPage');
+
         Route::group(['prefix' => 'user'], function() {
             /**
              * 用户列表页
@@ -137,6 +143,12 @@ Route::group(['prefix' => 'admin'], function() {
         });
 
         Route::group(['prefix' => 'goods'], function() {
+            /**
+             * 商品列表页
+             * 访问地址：/admin/goods
+             */
+            Route::get('', 'AdminController@goodsPage');
+
             /**
              * 商品类型列表页
              * 访问地址：/admin/goods/type

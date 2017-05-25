@@ -42,6 +42,12 @@
                             商品类型管理
                         </a>
                     </li>
+                    <li>
+                        <a href="/admin/goods">
+                            <i class="fa fa-home"></i>
+                            商品管理
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

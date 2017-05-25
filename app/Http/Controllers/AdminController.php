@@ -9,17 +9,21 @@ use App\Http\Controllers\Controller;
 
 use App\Repositories\UserRepository;
 use App\Repositories\GoodsTypeRepository;
+use App\Repositories\GoodsRepository;
 
 class AdminController extends Controller
 {
     protected $user;
+    protected $goods;
     protected $goodsType;
 
     public function __construct(
         UserRepository $user,
+        GoodsRepository $goods,
         GoodsTypeRepository $goodsType
     ) {
         $this->user = $user;
+        $this->goods = $goods;
         $this->goodsType = $goodsType;
     }
     /**
@@ -88,6 +92,19 @@ class AdminController extends Controller
 
         return view('admin.user')->with([
             'users' => $users,
+        ]);
+    }
+
+    /**
+     * 商品列表页
+     *
+     * @return void
+     */
+    public function goodsPage() {
+        $goods = $this->goods->all();
+
+        return view('admin.goods')->with([
+            'goods' => $goods,
         ]);
     }
 
