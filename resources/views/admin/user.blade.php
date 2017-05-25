@@ -70,26 +70,40 @@
                       <thead>
                         <tr>
                           <th>编号</th>
-                          <th>用户名</th></th>
+                          <th>用户名</th>
                           <th>手机号</th>
                           <th>邮箱</th>
                           <th>余额</th>
                           <th>角色</th>
                           <th>状态</th>
                           <th>注册日期</th>
+                          <th>操作</th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($users as $item)
+                        @foreach ($users as $key => $item)
                           <tr>
-                            <td>{{ $item->id }}</td>
+                            <td>{{ $key + 1 }}</td>
                             <td>{{ $item->username }}</td>
                             <td>{{ $item->telephone }}</td>
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->money }}</td>
                             <td>{{ $item->role->name }}</td>
-                            <td>{{ $item->status }}</td>
+                            <td>
+                                @if ($item->status == 1)
+                                    正常
+                                @elseif ($item->status == 2)
+                                    已禁用
+                                @endif
+                            </td>
                             <td>{{ $item->created_at }}</td>
+                            <td>
+                                @if ($item->status == 1)
+                                    <a href="javascript:">禁用</a>
+                                @elseif ($item->status == 2)
+                                    <a href="javascript:">启用</a>
+                                @endif
+                            </td>
                           </tr>
                         @endforeach
                       </tbody>
@@ -141,9 +155,23 @@
     <script src="/admin/vendors/pdfmake/build/vfs_fonts.js"></script>
 
     <!-- Custom Theme Scripts -->
-    {{-- <script src="/admin/js/custom.min.js"></script> --}}
+    <script src="/admin/js/custom.min.js"></script>
     <script>
-      
+        $('#datatable').DataTable({
+            language: {
+                search: '搜索：',
+                searchPlaceholder: '请输入要搜索的内容',
+                paginate: {
+                    first: '第一页',
+                    last: '最后一页',
+                    next: '下一页',
+                    previous: '上一页'
+                },
+                zeroRecords: '没有数据',
+                lengthMenu: '展示 _MENU_ 条数据',
+                info: '当前展示第 _START_ 到第 _END_ 条，共计 _TOTAL_ 条'
+            }
+        })
     </script>
   </body>
 </html>

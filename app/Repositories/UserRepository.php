@@ -13,6 +13,15 @@ class UserRepository
     }
 
     /**
+     * 获取所有用户
+     *
+     * @return void
+     */
+    public function all() {
+        return $this->user->with('role')->get();
+    }
+
+    /**
      * 通过用户名获取用户信息
      *
      * @param [type] $account

@@ -30,4 +30,13 @@ class GoodsTypeRepository
     public function getNormalGoodsTypes() {
         return $this->getGoodsTypesByStatus(1);
     }
+
+    /**
+     * 获取所有商品类型
+     *
+     * @return void
+     */
+    public function all() {
+        return $this->goodsType->get();
+    }
 }

@@ -16,4 +16,8 @@ class User extends Model
     public function order() {
         return $this->hasMany('App\Models\Order');
     }
+
+    public function role() {
+        return $this->belongsTo('App\Models\Role');
+    }
 }

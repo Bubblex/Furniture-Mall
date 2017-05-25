@@ -126,6 +126,22 @@ Route::group(['prefix' => 'admin'], function() {
          * 后台首页
          * 访问地址：/admin
          */
-        Route::get('', 'AdminController@adminHomePage');
+        Route::get('index', 'AdminController@homePage');
+
+        Route::group(['prefix' => 'user'], function() {
+            /**
+             * 用户列表页
+             * 访问地址：/admin/user
+             */
+            Route::get('', 'AdminController@userListPage');
+        });
+
+        Route::group(['prefix' => 'goods'], function() {
+            /**
+             * 商品类型列表页
+             * 访问地址：/admin/goods/type
+             */
+            Route::get('type', 'AdminController@goodsTypePage');
+        });
     });
 });

@@ -8,15 +8,19 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Repositories\UserRepository;
+use App\Repositories\GoodsTypeRepository;
 
 class AdminController extends Controller
 {
     protected $user;
+    protected $goodsType;
 
     public function __construct(
-        UserRepository $user
+        UserRepository $user,
+        GoodsTypeRepository $goodsType
     ) {
         $this->user = $user;
+        $this->goodsType = $goodsType;
     }
     /**
      * 登录页
@@ -65,7 +69,38 @@ class AdminController extends Controller
         ]);
     }
 
-    public function adminHomePage() {
+    /**
+     * 首页
+     *
+     * @return void
+     */
+    public function homePage() {
         return view('admin.index');
+    }
+
+    /**
+     * 用户列表页
+     *
+     * @return void
+     */
+    public function userListPage() {
+        $users = $this->user->all();
+
+        return view('admin.user')->with([
+            'users' => $users,
+        ]);
+    }
+
+    /**
+     * 商品类型列表页
+     *
+     * @return void
+     */
+    public function goodsTypePage() {
+        $goodsType = $this->goodsType->all();
+
+        return view('admin.goods-type')->with([
+            'goodsType' => $goodsType
+        ]);
     }
 }
