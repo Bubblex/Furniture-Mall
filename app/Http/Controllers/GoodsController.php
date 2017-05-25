@@ -62,11 +62,13 @@ class GoodsController extends Controller
         $id = $request->id;
         $goods = $this->goods->getGoodsById($id);
         $recommendGoods = $this->goods->getGoodsByTypeWithNum($id, 10);
+        $hotGoods = $this->order->most();
 
         return view('goods.single')->with([
             'id' => $id,
             'goods' => $goods,
-            'recommendGoods' => $recommendGoods
+            'recommendGoods' => $recommendGoods,
+            'hotGoods' => $hotGoods,
         ]);
     }
 

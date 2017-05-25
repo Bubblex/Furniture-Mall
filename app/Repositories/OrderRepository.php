@@ -39,6 +39,7 @@ class OrderRepository
             ->with('goods')
             ->groupBy('goods_id')
             ->orderBy('hot_count')
+            ->take(6)
             ->get();
     }
 

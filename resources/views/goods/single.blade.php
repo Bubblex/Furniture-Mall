@@ -157,13 +157,17 @@
 				</div>
 
 
-				<h3 class="like">猜您喜欢</h3>
+				<h3 class="like">热门商品</h3>
 				<ul id="flexiselDemo3">
-					<li><img src="/resource/images/pic11.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 850</p></div></li>
-					<li><img src="/resource/images/pic10.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 1050</p></div></li>
-					<li><img src="/resource/images/pic4.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 990</p></div></li>
-					<li><img src="/resource/images/pic8.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 850</p></div></li>
-					<li><img src="/resource/images/pic7.jpg" class="img-responsive" /><div class="grid-flex"><a href="/goods/single">家具名称</a><p>RMB 870</p></div></li>
+					@foreach ($hotGoods as $goods)
+						<li>
+							<img src="{{ $goods->goods['images'][0]->url }}" class="img-responsive" />
+							<div class="grid-flex">
+								<a href="/goods/single?id={{ $goods->goods['id'] }}">{{ $goods->goods['name'] }}</a>
+								<p>￥{{ $goods->goods['price'] }}</p>
+							</div>
+						</li>
+					@endforeach
 				</ul>
 				<script type="text/javascript">
 					$(window).load(function() {

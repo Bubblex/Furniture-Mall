@@ -7,7 +7,7 @@
 			<div class="header_right">
 				@if(session('user'))
 					<div class="lang_list">
-						<span style="color: #fff">{{ session('user')->money }}</span> |
+						<span style="color: #fff">账户余额：{{ session('user')->money }}</span> |
 						<a href="/user/order" style='color: #fff'>个人中心</a> |
 						<a href="/account/logout" style='color: #fff'>退出登录</a>
 					</div>
