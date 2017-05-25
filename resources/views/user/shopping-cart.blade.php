@@ -26,6 +26,17 @@
 								}
 							})
 						});
+
+						$('.pay-button').on('click', function() {
+							$.ajax({
+								url: '/user/pay',
+								type: 'post',
+								success: function(data) {
+									alert(data.message)
+									window.location.href = '/user/order'
+								}
+							})
+						})
 					});
 				</script>
 				<!--购物车内一条数据-->
@@ -75,7 +86,7 @@
 					<div class="clearfix"> </div>
 				</ul>
 				<div class="clearfix"></div>
-				<a class="order" href="#">支付</a>
+				<a class="order pay-button" href="#">支付</a>
 				<!--<div class="total-item">
 					<h3>OPTIONS</h3>
 					<h4>COUPONS</h4>

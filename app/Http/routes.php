@@ -71,6 +71,12 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
      * 访问地址：/user/order
      */
     Route::get('order', 'GoodsController@orderPage');
+
+    /**
+     * 支付接口
+     * 访问地址：/user/pay
+     */
+    Route::post('pay', 'GoodsController@pay');
 });
 
 Route::group(['prefix' => 'goods'], function() {

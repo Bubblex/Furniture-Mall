@@ -112,25 +112,25 @@
 
 				<h3 class="m_2">最热</h3>
 				<div class="content_grid">
-					{{-- BEGIN 一件商品 --}}
-					<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-							<a href="single.html">
+					@foreach ($hotGoods as $goods)
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<a href="/goods/single?id={{ $goods->id }}">
 								<div class="inner_content clearfix">
 									<div class="product_image">
-										<img src="/resource/images/pic1.jpg" class="img-responsive" alt=""/>
-										<a href="javascript:" class="button item_add item_1"> </a>
+										<img src="{{ $goods->images[0]->url }}" class="img-responsive" alt=""/>
+										{{-- <a href="javascript:" class="button item_add item_1"> </a> --}}
 										<div class="product_container">
-								 		  <div class="cart-left">
-									 			<p class="title">商品名称</p>
-								   		</div>
-											<span class="amount item_price">￥2300.00</span>
+											<div class="cart-left">
+												<p class="title">{{ $goods->name }}</p>
+											</div>
+											<span class="amount item_price">￥{{ $goods->price }}</span>
 											<div class="clearfix"></div>
 										</div>
 									</div>
 								</div>
 							</a>
-				    </div>
-						{{-- END 一件商品 --}}
+						</div>
+					@endforeach
 					<div class="clearfix"></div>
 				</div>
 

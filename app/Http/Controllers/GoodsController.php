@@ -11,21 +11,25 @@ use App\Repositories\UserRepository;
 use App\Repositories\GoodsRepository;
 use App\Repositories\GoodsTypeRepository;
 use App\Repositories\ShoppingCartRepository;
+use App\Repositories\OrderRepository;
 
 class GoodsController extends Controller
 {
     protected $user;
     protected $goods;
+    protected $order;
     protected $goodsType;
     protected $shoppingCart;
 
     public function __construct(
+        OrderRepository $order,
         GoodsRepository $goods,
         GoodsTypeRepository $goodsType,
         ShoppingCartRepository $shoppingCart,
         UserRepository $user) {
         $this->user = $user;
         $this->goods = $goods;
+        $this->order = $order;
         $this->goodsType = $goodsType;
         $this->shoppingCart = $shoppingCart;
     }
@@ -114,6 +118,12 @@ class GoodsController extends Controller
         ]);
     }
 
+    /**
+     * 删除购物车商品接口
+     *
+     * @param Request $request
+     * @return void
+     */
     public function deleteShoppingCart(Request $request) {
         $result = $this->shoppingCart->delete($request->id);
 
@@ -130,6 +140,11 @@ class GoodsController extends Controller
         ]);
     }
 
+    /**
+     * 订单页
+     *
+     * @return void
+     */
     public function orderPage() {
         $id = session('user')->id;
 
@@ -147,6 +162,23 @@ class GoodsController extends Controller
             'orders' => $user->order,
             'price' => $price,
             'discount' => $discount
+        ]);
+    }
+
+    public function pay(Request $request) {
+        $id = session('user')->id;
+        $user = $this->user->byId($id);
+        $carts = $user->cart;
+
+        foreach ($carts as $cart) {
+            $goods = $this->goods->getGoodsById($cart->goods_id);
+            $this->order->add($cart, $goods->price, $goods->discount_price);
+            $this->shoppingCart->delete($cart->id);
+        }
+
+        return response()->json([
+            'status' => 1,
+            'message' => '支付成功'
         ]);
     }
 }
