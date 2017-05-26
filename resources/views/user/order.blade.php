@@ -17,6 +17,7 @@
 								data: {
 									id: $this.attr('data-id')
 								},
+								fjslfoijofweonfownjniv
 								success: function(data) {
 									alert(data.message)
 

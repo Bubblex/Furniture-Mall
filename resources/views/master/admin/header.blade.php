@@ -11,8 +11,8 @@
             <span class=" fa fa-angle-down"></span>
             </a>
             <ul class="dropdown-menu dropdown-usermenu pull-right">
-            <li><a href="javascript:;">个人资料</a></li>
-            <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i>退出登录</a></li>
+            <li><a href="/admin/change-password">修改密码</a></li>
+            <li><a href="/admin/logout"><i class="fa fa-sign-out pull-right"></i>退出登录</a></li>
             </ul>
         </li>
         </ul>

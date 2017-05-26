@@ -26,6 +26,7 @@ class AdminController extends Controller
         $this->goods = $goods;
         $this->goodsType = $goodsType;
     }
+
     /**
      * 登录页
      *
@@ -80,6 +81,10 @@ class AdminController extends Controller
      */
     public function homePage() {
         return view('admin.index');
+    }
+
+    public function changePasswordPage() {
+        return view('admin.change-password');
     }
 
     /**

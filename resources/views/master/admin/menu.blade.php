@@ -25,12 +25,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/info">
-                            <i class="fa fa-home"></i>
-                            个人资料
-                        </a>
-                    </li>
-                    <li>
                         <a href="/admin/user">
                             <i class="fa fa-home"></i>
                             用户管理

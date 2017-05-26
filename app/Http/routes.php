@@ -132,7 +132,7 @@ Route::group(['prefix' => 'admin'], function() {
          * 个人资料
          * 访问地址：/admin/info
          */
-        Route::get('info', 'AdminController@infoPage');
+        Route::get('change-password', 'AdminController@changePasswordPage');
 
         Route::group(['prefix' => 'user'], function() {
             /**

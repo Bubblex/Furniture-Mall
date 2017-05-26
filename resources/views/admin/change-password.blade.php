@@ -42,7 +42,6 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>用户管理 <small></small></h3>
               </div>
               {{-- <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
@@ -59,6 +58,49 @@
             <div class="clearfix"></div>
 
             <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>修改密码<small></small></h2>
+                             <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <form id="demo-form2" novalidate class="form-horizontal form-label-left">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="old-password">
+                                        旧密码：<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="password" id="old-password" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="new-password">
+                                        新密码：<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="password" id="new-password" name="new-password" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password" class="control-label col-md-3 col-sm-3 col-xs-12">
+                                        确认密码：<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="confirm-password" class="form-control col-md-7 col-xs-12" type="password" name="middle-name">
+                                    </div>
+                                </div>
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                        <button type="submit" class="btn btn-success">提交</button>
+                                        <button class="btn btn-primary" type="button">取消</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
@@ -101,8 +143,20 @@
     <script src="/admin/vendors/jszip/dist/jszip.min.js"></script>
     <script src="/admin/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="/admin/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="/admin/vendors/validator/validator.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="/admin/js/custom.min.js"></script>
+    <script>
+        /**
+        $('#demo-form2').on('submit', function(e) {
+            e.preventDefault();
+
+            var oldPassword = $('#old-password').val(),
+                newPassword = $('#new-password').val(),
+                confirmPassword = $('#confirm-password').val();
+        })
+        */
+    </script>
   </body>
 </html>
