@@ -110,7 +110,7 @@ class AccountController extends Controller
     }
 
     public function logout(Request $request) {
-        $request->session()->flush();
+        $request->session()->forget('user');
 
         return redirect('/account/login');
     }

@@ -93,8 +93,8 @@
                                 <div class="ln_solid"></div>
                                 <div class="form-group">
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                        <button type="submit" class="btn btn-success">提交</button>
-                                        <button class="btn btn-primary" type="button">取消</button>
+                                        <button class="btn btn-success">提交</button>
+                                        <a class="btn btn-primary" href="/admin/user">取消</a>
                                     </div>
                                 </div>
                             </form>
@@ -143,20 +143,50 @@
     <script src="/admin/vendors/jszip/dist/jszip.min.js"></script>
     <script src="/admin/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="/admin/vendors/pdfmake/build/vfs_fonts.js"></script>
-    <script src="/admin/vendors/validator/validator.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="/admin/js/custom.min.js"></script>
     <script>
-        /**
         $('#demo-form2').on('submit', function(e) {
             e.preventDefault();
 
             var oldPassword = $('#old-password').val(),
                 newPassword = $('#new-password').val(),
                 confirmPassword = $('#confirm-password').val();
+
+            if (!oldPassword) {
+                alert('请输入旧密码')
+                return
+            }
+            else if (!newPassword) {
+                alert('请输入新密码')
+                return
+            }
+            else if (!confirmPassword) {
+                alert('请确认密码')
+                return
+            }
+            else if (newPassword !== confirmPassword) {
+                alert('两次密码不一致')
+                return
+            }
+
+            $.ajax({
+                url: '/admin/change-password',
+                type: 'post',
+                data: {
+                    oldPassword: oldPassword,
+                    newPassword,
+                },
+                success: function(data) {
+                    alert(data.message)
+
+                    if (data.status === 1) {
+                        window.location.href = '/admin/login'
+                    }
+                }
+            })
         })
-        */
     </script>
   </body>
 </html>

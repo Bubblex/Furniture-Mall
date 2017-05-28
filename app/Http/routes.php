@@ -129,10 +129,16 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('index', 'AdminController@homePage');
 
         /**
-         * 个人资料
-         * 访问地址：/admin/info
+         * 修改密码页
+         * 访问地址：/admin/change-password
          */
         Route::get('change-password', 'AdminController@changePasswordPage');
+
+        /**
+         * 修改密码接口
+         * 访问地址：/admin/change-password
+         */
+        Route::post('change-password', 'AdminController@changePassword');
 
         Route::group(['prefix' => 'user'], function() {
             /**

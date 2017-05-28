@@ -83,8 +83,34 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    /**
+     * 修改密码页
+     *
+     * @return void
+     */
     public function changePasswordPage() {
         return view('admin.change-password');
+    }
+
+    public function changePassword(Request $request) {
+        $user = $this->user->byId(session('admin')->id);
+
+        if ($user->password != md5($request->oldPassword)) {
+            return response()->json([
+                'status' => 2,
+                'message' => '旧密码错误'
+            ]);
+        }
+
+        $user->password = md5($request->newPassword);
+        $user->save();
+
+        session()->forget('admin');
+
+        return response()->json([
+            'status' => 1,
+            'message' => '修改成功，请重新登录'
+        ]);
     }
 
     /**
