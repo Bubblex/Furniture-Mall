@@ -180,6 +180,12 @@ Route::group(['prefix' => 'admin'], function() {
             Route::get('type', 'AdminController@goodsTypePage');
 
             /**
+             * 添加商品类型
+             * 访问地址：/admin/goods/type/add
+             */
+            Route::post('type/add', 'AdminController@goodsTypeAdd');
+
+            /**
              * 禁用 / 启用商品类型
              * 访问地址：/admin/goods/type/disable
              */

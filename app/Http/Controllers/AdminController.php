@@ -249,4 +249,19 @@ class AdminController extends Controller
             'message' => '删除商品类型成功'
         ]);
     }
+
+    /**
+     * 添加商品类型接口
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function goodsTypeAdd(Request $request) {
+        $this->goodsType->add($request->name);
+
+        return response()->json([
+            'status' => 1,
+            'message' => '添加成功'
+        ]);
+    }
 }

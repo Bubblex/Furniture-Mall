@@ -60,5 +60,11 @@ class GoodsTypeRepository
     public function delete($id) {
         $this->goodsType->destroy($id);
     }
+
+    public function add($name) {
+        $goodsType = new GoodsType;
+        $goodsType->name = $name;
+        $goodsType->save();
+    }
 }
 
