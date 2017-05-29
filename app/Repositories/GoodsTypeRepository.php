@@ -39,4 +39,15 @@ class GoodsTypeRepository
     public function all() {
         return $this->goodsType->get();
     }
+
+    /**
+     * 更新商品类型
+     *
+     * @param [type] $id
+     * @param [type] $update
+     * @return void
+     */
+    public function update($id, $update) {
+        $this->goodsType->where('id', $id)->update($update);
+    }
 }

@@ -92,6 +92,12 @@ class AdminController extends Controller
         return view('admin.change-password');
     }
 
+    /**
+     * 修改密码
+     *
+     * @param Request $request
+     * @return void
+     */
     public function changePassword(Request $request) {
         $user = $this->user->byId(session('admin')->id);
 
@@ -127,6 +133,24 @@ class AdminController extends Controller
     }
 
     /**
+     * 用户启用禁用状态
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function userDisable(Request $request) {
+        $id = $request->id;
+        $status = $request->status;
+
+        $this->user->update($id, ['status' => $status]);
+
+        return response()->json([
+            'status' => 1,
+            'message' => '更新用户状态成功'
+        ]);
+    }
+
+    /**
      * 商品列表页
      *
      * @return void
@@ -149,6 +173,26 @@ class AdminController extends Controller
 
         return view('admin.goods-type')->with([
             'goodsType' => $goodsType
+        ]);
+    }
+
+    /**
+     * 禁用 / 启用商品类型
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function goodsTypeDisable(Request $request) {
+        $id = $request->id;
+        $status = $request->status;
+
+        $this->goodsType->update($id, [
+            'status' => $status
+        ]);
+
+        return response()->json([
+            'status' => 1,
+            'message' => '更新商品类型状态成功'
         ]);
     }
 }

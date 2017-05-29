@@ -90,18 +90,20 @@
                             <td>{{ $item->money }}</td>
                             <td>{{ $item->role->name }}</td>
                             <td>
-                                @if ($item->status == 1)
+                                <span class="user-status-text">
+                                  @if ($item->status == 1)
                                     正常
-                                @elseif ($item->status == 2)
+                                  @elseif ($item->status == 2)
                                     已禁用
-                                @endif
+                                  @endif
+                                </span>
                             </td>
                             <td>{{ $item->created_at }}</td>
                             <td>
                                 @if ($item->status == 1)
-                                    <a href="javascript:">禁用</a>
+                                    <a href="javascript:" data-status="2" data-id="{{ $item->id }}" class="user-status">禁用</a>
                                 @elseif ($item->status == 2)
-                                    <a href="javascript:">启用</a>
+                                    <a href="javascript:" data-status="1" data-id="{{ $item->id }}" class="user-status">启用</a>
                                 @endif
                             </td>
                           </tr>
@@ -157,7 +159,7 @@
     <!-- Custom Theme Scripts -->
     <script src="/admin/js/custom.min.js"></script>
     <script>
-        $('#datatable').DataTable({
+        var table = $('#datatable').DataTable({
             language: {
                 search: '搜索：',
                 searchPlaceholder: '请输入要搜索的内容',
@@ -171,6 +173,27 @@
                 lengthMenu: '展示 _MENU_ 条数据',
                 info: '当前展示第 _START_ 到第 _END_ 条，共计 _TOTAL_ 条'
             }
+        })
+
+        $('.user-status').on('click', function() {
+          var id = $(this).attr('data-id')
+          var status = $(this).attr('data-status')
+
+          $.ajax({
+            url: '/admin/user/disable',
+            type: 'post',
+            data: {
+              id: id,
+              status: status,
+            },
+            success: function(data) {
+              alert(data.message)
+
+              if (data.status === 1) {
+                window.location.reload()
+              }
+            }
+          })
         })
     </script>
   </body>

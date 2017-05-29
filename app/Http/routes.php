@@ -146,6 +146,12 @@ Route::group(['prefix' => 'admin'], function() {
              * 访问地址：/admin/user
              */
             Route::get('', 'AdminController@userListPage');
+
+            /**
+             * 禁用 / 启用用户
+             * 访问地址：/admin/user/disable
+             */
+            Route::post('disable', 'AdminController@userDisable');
         });
 
         Route::group(['prefix' => 'goods'], function() {
@@ -160,6 +166,8 @@ Route::group(['prefix' => 'admin'], function() {
              * 访问地址：/admin/goods/type
              */
             Route::get('type', 'AdminController@goodsTypePage');
+
+            Route::post('type/disable', 'AdminController@goodsTypeDisable');
         });
     });
 });

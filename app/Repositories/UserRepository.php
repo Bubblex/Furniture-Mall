@@ -44,6 +44,12 @@ class UserRepository
             ->first();
     }
 
+    /**
+     * 通过 id 获取数据
+     *
+     * @param [type] $id
+     * @return void
+     */
     public function byId($id) {
         return $this->user->find($id);
     }
@@ -67,5 +73,16 @@ class UserRepository
         }
 
         return $user;
+    }
+
+    /**
+     * 更新用户表
+     *
+     * @param [type] $id
+     * @param [type] $update
+     * @return void
+     */
+    public function update($id, $update) {
+        $this->user->where('id', $id)->update($update);
     }
 }

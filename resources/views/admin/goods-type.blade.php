@@ -91,11 +91,11 @@
                             <td>{{ $item->created_at }}</td>
                             <td>
                                 @if ($item->status == 1)
-                                    <a href="#">禁用</a>
+                                    <a href="#" data-id="{{ $item->id }}" data-status="2" class="goods-type-status">禁用</a>
                                 @elseif ($item->status == 2)
-                                    <a href="#">启用</a>
+                                    <a href="#" data-id="{{ $item->id }}" data-status="1" class="goods-type-status">启用</a>
                                 @endif
-                                <a href="#">删除</a>
+                                <a href="#" data-id="{{ $item->id }}" class="goods-type-delete">删除</a>
                             </td>
                           </tr>
                         @endforeach
@@ -164,6 +164,27 @@
                 lengthMenu: '展示 _MENU_ 条数据',
                 info: '当前展示第 _START_ 到第 _END_ 条，共计 _TOTAL_ 条'
             }
+        })
+
+        $('.goods-type-status').on('click', function() {
+          var id = $(this).attr('data-id')
+          var status = $(this).attr('data-status')
+
+          $.ajax({
+            url: '/admin/goods/type/disable',
+            type: 'post',
+            data: {
+              id: id,
+              status: status,
+            },
+            success: function(data) {
+              alert(data.message)
+
+              if (data.status === 1) {
+                window.location.reload()
+              }
+            }
+          })
         })
     </script>
   </body>
