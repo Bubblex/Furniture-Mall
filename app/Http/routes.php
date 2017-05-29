@@ -162,6 +162,18 @@ Route::group(['prefix' => 'admin'], function() {
             Route::get('', 'AdminController@goodsPage');
 
             /**
+             * 禁用 / 启用商品
+             * 访问地址：/admin/goods/disable
+             */
+            Route::post('disable', 'AdminController@goodsDisable');
+
+            /**
+             * 删除商品
+             * 访问地址：/admin/goods/delete
+             */
+            Route::post('delete', 'AdminController@goodsDelete');
+
+            /**
              * 商品类型列表页
              * 访问地址：/admin/goods/type
              */
@@ -173,6 +185,10 @@ Route::group(['prefix' => 'admin'], function() {
              */
             Route::post('type/disable', 'AdminController@goodsTypeDisable');
 
+            /**
+             * 删除商品类型
+             * 访问地址：/admin/goods/type/delete
+             */
             Route::post('type/delete', 'AdminController@goodsTypeDelete');
         });
     });

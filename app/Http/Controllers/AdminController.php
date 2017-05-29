@@ -164,6 +164,43 @@ class AdminController extends Controller
     }
 
     /**
+     * 禁用 / 启用商品
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function goodsDisable(Request $request) {
+        $id = $request->id;
+        $status = $request->status;
+
+        $this->goods->update($id, [
+            'status' => $status
+        ]);
+
+        return response()->json([
+            'status' => 1,
+            'message' => '更新商品状态成功'
+        ]);
+    }
+
+    /**
+     * 删除商品
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function goodsDelete(Request $request) {
+        $id = $request->id;
+
+        $this->goods->delete($id);
+
+        return response()->json([
+            'status' => 1,
+            'message' => '删除商品成功'
+        ]);
+    }
+
+    /**
      * 商品类型列表页
      *
      * @return void
@@ -196,6 +233,12 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * 删除商品类型
+     *
+     * @param Request $request
+     * @return void
+     */
     public function goodsTypeDelete(Request $request) {
         $id = $request->id;
 

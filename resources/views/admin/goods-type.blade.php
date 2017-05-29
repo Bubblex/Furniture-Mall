@@ -151,59 +151,61 @@
     <script src="/admin/js/custom.min.js"></script>
     <script>
         $('#datatable').DataTable({
-            language: {
-                search: '搜索：',
-                searchPlaceholder: '请输入要搜索的内容',
-                paginate: {
-                    first: '第一页',
-                    last: '最后一页',
-                    next: '下一页',
-                    previous: '上一页'
+          stateSave: true,
+          language: {
+            search: '搜索：',
+            searchPlaceholder: '请输入要搜索的内容',
+            paginate: {
+                first: '第一页',
+                last: '最后一页',
+                next: '下一页',
+                previous: '上一页'
+            },
+            zeroRecords: '没有数据',
+            lengthMenu: '展示 _MENU_ 条数据',
+            info: '当前展示第 _START_ 到第 _END_ 条，共计 _TOTAL_ 条'
+          },
+          drawCallback: function() {
+            $('.goods-type-status').on('click', function() {
+              var id = $(this).attr('data-id')
+              var status = $(this).attr('data-status')
+
+              $.ajax({
+                url: '/admin/goods/type/disable',
+                type: 'post',
+                data: {
+                  id: id,
+                  status: status,
                 },
-                zeroRecords: '没有数据',
-                lengthMenu: '展示 _MENU_ 条数据',
-                info: '当前展示第 _START_ 到第 _END_ 条，共计 _TOTAL_ 条'
-            }
-        })
+                success: function(data) {
+                  alert(data.message)
 
-        $('.goods-type-status').on('click', function() {
-          var id = $(this).attr('data-id')
-          var status = $(this).attr('data-status')
+                  if (data.status === 1) {
+                    window.location.reload()
+                  }
+                }
+              })
+            })
 
-          $.ajax({
-            url: '/admin/goods/type/disable',
-            type: 'post',
-            data: {
-              id: id,
-              status: status,
-            },
-            success: function(data) {
-              alert(data.message)
+            $('.goods-type-delete').on('click', function() {
+              var id = $(this).attr('data-id')
 
-              if (data.status === 1) {
-                window.location.reload()
-              }
-            }
-          })
-        })
+              $.ajax({
+                url: '/admin/goods/type/delete',
+                type: 'post',
+                data: {
+                  id: id,
+                },
+                success: function(data) {
+                  alert(data.message)
 
-        $('.goods-type-delete').on('click', function() {
-          var id = $(this).attr('data-id')
-
-          $.ajax({
-            url: '/admin/goods/type/delete',
-            type: 'post',
-            data: {
-              id: id,
-            },
-            success: function(data) {
-              alert(data.message)
-
-              if (data.status === 1) {
-                window.location.reload()
-              }
-            }
-          })
+                  if (data.status === 1) {
+                    window.location.reload()
+                  }
+                }
+              })
+            })
+          }
         })
     </script>
   </body>

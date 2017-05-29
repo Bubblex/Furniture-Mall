@@ -104,6 +104,27 @@ class GoodsRepository
      * @return void
      */
     public function all() {
-        return $this->goods->get();
+        return $this->goods->has('type')->with(['images', 'type'])->get();
+    }
+
+    /**
+     * 删除商品
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function delete($id) {
+        $this->goods->destroy($id);
+    }
+
+    /**
+     * 更新商品
+     *
+     * @param [type] $id
+     * @param [type] $update
+     * @return void
+     */
+    public function update($id, $update) {
+        $this->goods->where('id', $id)->update($update);
     }
 }

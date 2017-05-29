@@ -42,7 +42,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>商品管理 <small></small></h3>
+                <h3>商品管理<small></small></h3>
               </div>
               {{-- <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
@@ -97,11 +97,11 @@
                             <td>{{ $item->created_at }}</td>
                             <td>
                                 @if ($item->status == 1)
-                                    <a href="#">禁用</a>
+                                    <a href="#" data-id="{{ $item->id }}" data-status="2" class="goods-status">禁用</a>
                                 @elseif ($item->status == 2)
-                                    <a href="#">启用</a>
+                                    <a href="#" data-id="{{ $item->id }}" data-status="1" class="goods-status">启用</a>
                                 @endif
-                                <a href="#">删除</a>
+                                <a href="#" data-id="{{ $item->id }}" class="goods-delete">删除</a>
                             </td>
                           </tr>
                         @endforeach
@@ -157,6 +157,7 @@
     <script src="/admin/js/custom.min.js"></script>
     <script>
         $('#datatable').DataTable({
+            stateSave: true,
             language: {
                 search: '搜索：',
                 searchPlaceholder: '请输入要搜索的内容',
@@ -169,7 +170,48 @@
                 zeroRecords: '没有数据',
                 lengthMenu: '展示 _MENU_ 条数据',
                 info: '当前展示第 _START_ 到第 _END_ 条，共计 _TOTAL_ 条'
-            }
+            },
+            drawCallback: function() {
+              $('.goods-delete').on('click', function() {
+                var id = $(this).attr('data-id')
+
+                $.ajax({
+                  url: '/admin/goods/delete',
+                  type: 'post',
+                  data: {
+                    id: id,
+                  },
+                  success: function(data) {
+                    alert(data.message)
+
+                    if (data.status === 1) {
+                      window.location.reload()
+                    }
+                  }
+                })
+              })
+
+              $('.goods-status').on('click', function() {
+                var id = $(this).attr('data-id')
+                var status = $(this).attr('data-status')
+
+                $.ajax({
+                  url: '/admin/goods/disable',
+                  type: 'post',
+                  data: {
+                    id: id,
+                    status: status,
+                  },
+                  success: function(data) {
+                    alert(data.message)
+
+                    if (data.status === 1) {
+                      window.location.reload()
+                    }
+                  }
+                })
+              })
+            },
         })
     </script>
   </body>
