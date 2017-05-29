@@ -50,4 +50,15 @@ class GoodsTypeRepository
     public function update($id, $update) {
         $this->goodsType->where('id', $id)->update($update);
     }
+
+    /**
+     * 删除商品类型
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function delete($id) {
+        $this->goodsType->destroy($id);
+    }
 }
+

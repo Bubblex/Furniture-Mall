@@ -195,4 +195,15 @@ class AdminController extends Controller
             'message' => '更新商品类型状态成功'
         ]);
     }
+
+    public function goodsTypeDelete(Request $request) {
+        $id = $request->id;
+
+        $this->goodsType->delete($id);
+
+        return response()->json([
+            'status' => 1,
+            'message' => '删除商品类型成功'
+        ]);
+    }
 }

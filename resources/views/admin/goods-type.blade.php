@@ -62,7 +62,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>用户列表<small></small></h2>
+                    <h2>商品分类列表<small></small></h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -176,6 +176,25 @@
             data: {
               id: id,
               status: status,
+            },
+            success: function(data) {
+              alert(data.message)
+
+              if (data.status === 1) {
+                window.location.reload()
+              }
+            }
+          })
+        })
+
+        $('.goods-type-delete').on('click', function() {
+          var id = $(this).attr('data-id')
+
+          $.ajax({
+            url: '/admin/goods/type/delete',
+            type: 'post',
+            data: {
+              id: id,
             },
             success: function(data) {
               alert(data.message)
