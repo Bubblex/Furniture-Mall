@@ -94,7 +94,6 @@ class GoodsRepository
             ->where('status', 1)
             ->with('type')
             ->with('images')
-            ->with('norms')
             ->find($id);
     }
 

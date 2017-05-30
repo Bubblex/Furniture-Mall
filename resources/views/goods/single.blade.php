@@ -114,8 +114,8 @@
 							<p class="quick_desc">{{ $goods->summary }}</p>
 			   		 	<ul class="size goods-norm">
 								<h3>产品规格</h3>
-								@foreach ($goods->norms as $item)
-									<li data-norm='{{ $item->name }}'><a href="javascript:">{{ $item->name }}</a></li>
+								@foreach (explode(',', $goods->norm) as $item)
+									<li data-norm='{{ $item }}'><a href="javascript:">{{ $item }}</a></li>
 								@endforeach
 							</ul>
 							<ul class="product-qty">
