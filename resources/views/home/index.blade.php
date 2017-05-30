@@ -46,8 +46,10 @@
 					</ul>
 				</div>
 				<div class="search">
-					<input type="text" value="搜索" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '搜索';}">
-					<input type="submit" value="">
+					<form action="/search">
+						<input type="text" name="search" value="{{ $search or '' }}" placeholder="请输入关键字">
+						<input type="submit" value="">
+					</form>
 				</div>
 
 				<div class="welcome_box">

@@ -65,4 +65,19 @@ class IndexController extends Controller
             ]
         ]);
     }
+
+    /**
+     * 搜索页
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function searchPage(Request $request) {
+        $goods = $this->goods->search($request->search);
+
+        return view('goods.result')->with([
+            'goods' => $goods,
+            'search' => $request->search
+        ]);
+    }
 }

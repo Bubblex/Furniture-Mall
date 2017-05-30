@@ -18,18 +18,7 @@
 	<div class="content_box">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3">
-					<div class="menu_box">
-						<h3 class="menu_head">分类</h3>
-						<ul class="nav">
-							@foreach ($goodsType as $type)
-								<li class="{{ $id == $type->id ? 'active' : '' }}"><a href="/goods/list?id={{ $type->id }}">{{ $type->name }}</a></li>
-							@endforeach
-						</ul>
-					</div>
-			  </div>
-
-			  <div class="col-md-9">
+			  <div class="col-md-12">
 			   	<div class="mens-toolbar">
 					<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid" style="margin-bottom: 60px;">
 						<ul>
@@ -50,16 +39,16 @@
 											</div>
 										</div>
 									</a>
-									<div class="cbp-vm-details">
+									{{-- <div class="cbp-vm-details">
 										<p>销量：88</p>
-									</div>
+									</div> --}}
 									<a class="button item_add cbp-vm-icon cbp-vm-add" href="javascript:">查看详情</a>
 								</li>
 							@endforeach
 							{{-- END 一条商品 --}}
 						</ul>
 					</div>
-					{!! $goods->appends(['id' => $id])->render() !!}
+					{!! $goods->appends(['search' => $search])->render() !!}
 				</div>
 			</div>
 		</div>

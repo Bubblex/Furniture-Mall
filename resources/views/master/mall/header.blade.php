@@ -38,8 +38,10 @@
 			</div>
 			
 			<div class="search">
-				<input type="text" placeholder="搜索" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-				<input type="submit" value="">
+				<form action="/search">
+					<input type="text" name="search" value="{{ $search or '' }}" placeholder="请输入关键字">
+					<input type="submit" value="">
+				</form>
 			</div>
 		</div>
 	</div>

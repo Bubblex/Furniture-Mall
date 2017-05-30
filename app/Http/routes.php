@@ -23,6 +23,12 @@ Route::get('/', 'IndexController@homePage');
 Route::post('/upload/image', 'IndexController@uploads');
 
 /**
+ * 搜索结果页
+ * 访问地址：/search
+ */
+Route::get('search', 'IndexController@searchPage');
+
+/**
  * 定义一个路由群组，并设置访问前缀为 account
  * 在该群组内部，所有访问地址都需要增加前缀，例如登录页的访问地址：/account/login
  */

@@ -70,6 +70,10 @@ class GoodsRepository
             ->get();
     }
 
+    public function search($where) {
+        return $this->goods->where('status', 1)->where('name', 'like', '%'.$where.'%')->with('images')->paginate();
+    }
+
     /**
      * 通过类型查询商品
      *
