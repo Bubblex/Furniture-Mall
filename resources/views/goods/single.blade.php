@@ -112,7 +112,7 @@
 							</div>
 							<h3 class="quick">产品简介</h3>
 							<p class="quick_desc">{{ $goods->summary }}</p>
-			   		 	<ul class="size goods-norm">
+							<ul class="size goods-norm">
 								<h3>产品规格</h3>
 								@foreach (explode(',', $goods->norm) as $item)
 									<li data-norm='{{ $item }}'><a href="javascript:">{{ $item }}</a></li>
