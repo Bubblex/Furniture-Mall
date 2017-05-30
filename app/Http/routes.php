@@ -18,6 +18,11 @@
 Route::get('/', 'IndexController@homePage');
 
 /**
+ * 上传文件接口
+ */
+Route::post('/upload/image', 'IndexController@uploads');
+
+/**
  * 定义一个路由群组，并设置访问前缀为 account
  * 在该群组内部，所有访问地址都需要增加前缀，例如登录页的访问地址：/account/login
  */
@@ -160,6 +165,18 @@ Route::group(['prefix' => 'admin'], function() {
              * 访问地址：/admin/goods
              */
             Route::get('', 'AdminController@goodsPage');
+
+            /**
+             * 添加商品页
+             * 访问地址：/admin/goods/add
+             */
+            Route::get('add', 'AdminController@goodsAddPage');
+
+            /**
+             * 添加商品接口
+             * 访问地址：/admin/goods/add
+             */
+            Route::post('add', 'AdminController@goodsAdd');
 
             /**
              * 禁用 / 启用商品

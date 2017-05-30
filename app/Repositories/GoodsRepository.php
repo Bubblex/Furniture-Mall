@@ -127,4 +127,16 @@ class GoodsRepository
     public function update($id, $update) {
         $this->goods->where('id', $id)->update($update);
     }
+
+    public function add($params) {
+        $goods = new Goods;
+        $goods->name = $params->name;
+        $goods->goods_type_id = $params->type;
+        $goods->norm = $params->norm;
+        $goods->price = $params->price;
+        $goods->discount_price = $params->discount_price;
+        $goods->save();
+
+        return $goods;
+    }
 }

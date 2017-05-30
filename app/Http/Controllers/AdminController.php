@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use App\Repositories\UserRepository;
 use App\Repositories\GoodsTypeRepository;
+use App\Repositories\GoodsImageRepository;
 use App\Repositories\GoodsRepository;
 
 class AdminController extends Controller
@@ -16,15 +17,18 @@ class AdminController extends Controller
     protected $user;
     protected $goods;
     protected $goodsType;
+    protected $goodsImage;
 
     public function __construct(
         UserRepository $user,
         GoodsRepository $goods,
-        GoodsTypeRepository $goodsType
+        GoodsTypeRepository $goodsType,
+        GoodsImageRepository $goodsImage
     ) {
         $this->user = $user;
         $this->goods = $goods;
         $this->goodsType = $goodsType;
+        $this->goodsImage = $goodsImage;
     }
 
     /**
@@ -262,6 +266,41 @@ class AdminController extends Controller
         return response()->json([
             'status' => 1,
             'message' => '添加成功'
+        ]);
+    }
+
+    /**
+     * 添加商品页
+     *
+     * @return void
+     */
+    public function goodsAddPage() {
+        $goodsType = $this->goodsType->all();
+
+        return view('admin.goods-add')->with([
+            'goodsType' => $goodsType
+        ]);
+    }
+
+    /**
+     * 添加商品接口
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function goodsAdd(Request $request) {
+        $result = $this->goods->add($request);
+
+        foreach ($request->images as $item) {
+            $this->goodsImage->add([
+                'id' => $result->id,
+                'url' => $item
+            ]);
+        }
+
+        return response()->json([
+            'status' => 1,
+            'message' => '商品添加成功'
         ]);
     }
 }

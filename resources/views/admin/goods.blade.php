@@ -62,7 +62,14 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>用户列表<small></small></h2>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h2>用户列表<small></small></h2>
+                      </div>
+                      <div class="col-md-6" style="text-align: right" >
+                        <a href="/admin/goods/add" class="btn btn-primary btn-goods-add">添加</a>
+                      </div>
+                    </div>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -101,6 +108,7 @@
                                 @elseif ($item->status == 2)
                                     <a href="#" data-id="{{ $item->id }}" data-status="1" class="goods-status">启用</a>
                                 @endif
+                                <a href="#" data-id="{{ $item->id }}" class="goods-update">修改</a>
                                 <a href="#" data-id="{{ $item->id }}" class="goods-delete">删除</a>
                             </td>
                           </tr>

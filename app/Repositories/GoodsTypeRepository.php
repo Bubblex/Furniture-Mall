@@ -37,7 +37,7 @@ class GoodsTypeRepository
      * @return void
      */
     public function all() {
-        return $this->goodsType->get();
+        return $this->goodsType->where('status', '1')->get();
     }
 
     /**

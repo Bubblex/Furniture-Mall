@@ -23,6 +23,7 @@
     <link href="/admin/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
     <link href="/admin/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
     <link href="/admin/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+     <link href="/admin/vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="/admin/css/custom.min.css" rel="stylesheet">
@@ -42,7 +43,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>商品类型管理 <small></small></h3>
+                <h3>商品管理 <small></small></h3>
               </div>
               {{-- <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
@@ -55,68 +56,84 @@
                 </div> --}}
               </div>
             </div>
-
             <div class="clearfix"></div>
-
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <div class="row">
                       <div class="col-md-6">
-                        <h2>添加商品类型<small></small></h2>
+                        <h2>添加商品<small></small></h2>
                       </div>
                     </div>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                          商品名称<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                          商品类型<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                          <select id="type" name="type" class="form-control">
+                            <option value="-1">请选择</option>
+                            @foreach ($goodsType as $item)
+                              <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
+                          </select>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Middle Name / Initial</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <div id="gender" class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                              <input type="radio" name="gender" value="male"> &nbsp; Male &nbsp;
-                            </label>
-                            <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                              <input type="radio" name="gender" value="female"> Female
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">
+                          原价<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                          <input id="price" name="price" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                          折扣价<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="discount_price" name="discount_price" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                          产品规格<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input
+                            id="norm"
+                            name="norm"
+                            type="text"
+                            class="tags form-control"
+                          />
+                          <div id="suggestions-container" style="position: relative; float: left; width: 100%; margin: 10px;"></div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                          产品图片<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="dropzone" id="images"></div>
                         </div>
                       </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button">Cancel</button>
-						  <button class="btn btn-primary" type="reset">Reset</button>
-                          <button type="submit" class="btn btn-success">Submit</button>
+                          <button type="submit" class="btn btn-success add-goods">添加</button>
+                          <button class="btn btn-primary" type="reset">取消</button>
                         </div>
                       </div>
                     </form>
@@ -165,8 +182,91 @@
     <script src="/admin/vendors/jszip/dist/jszip.min.js"></script>
     <script src="/admin/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="/admin/vendors/pdfmake/build/vfs_fonts.js"></script>
-
+    <script src="/admin/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <script src="/admin/vendors/dropzone/dist/min/dropzone.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="/admin/js/custom.min.js"></script>
+    <script>
+      Dropzone.autoDiscover = false;
+
+      $('#norm').tagsInput({
+        width: '100%',
+        defaultText: '添加规格'
+      })
+
+      var myDropzone = new Dropzone("#images", {
+        url: "/upload/image",
+        dictDefaultMessage: '点击上传图片',
+        dictCancelUpload: '取消上传',
+        dictCancelUploadConfirmation: '取消上传',
+        dictRemoveFile: '删除图片',
+        dictMaxFilesExceeded: '最多只能上传4张图片',
+        addRemoveLinks: true,
+        maxFiles: 4,
+        success: function(data) {
+
+        }
+      });
+
+      $('.add-goods').on('click', function() {
+        var name = $('#name').val();
+        var type = $('#type').val();
+        var price = $('#price').val();
+        var discount_price = $('#discount_price').val()
+        var norm = $('#norm').val();
+        var images = [];
+        var files = myDropzone.getAcceptedFiles();
+
+        if (!name) {
+          alert('请输入商品名称')
+          return
+        }
+        else if (!type === '-1') {
+          alert('请输入产品类型')
+          return
+        }
+        else if (!price) {
+          alert('请输入商品原价')
+          return
+        }
+        else if (!discount_price) {
+          alert('请输入商品折扣价')
+          return
+        }
+        else if (files.length === 0) {
+          alert('请上传商品图片')
+          return
+        }
+        else if (files.length === 1) {
+          alert('至少上传两张商品图片')
+          return
+        }
+
+        for (var i = 0; i < files.length; i++) {
+          var data = JSON.parse(files[i].xhr.response);
+          images.push(data.data.file_path)
+        }
+
+        $.ajax({
+          url: '/admin/goods/add',
+          type: 'post',
+          data: {
+            name: name,
+            type: type,
+            price: price,
+            discount_price: discount_price,
+            norm: norm,
+            images: images,
+          },
+          success: function(data) {
+            alert(data.message)
+
+            if (data.status === 1) {
+              window.location.href = '/admin/goods'
+            }
+          }
+        })
+      })
+    </script>
   </body>
 </html>

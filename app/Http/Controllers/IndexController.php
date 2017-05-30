@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Http\File;
 use App\Http\Controllers\Controller;
 
 use App\Repositories\GoodsTypeRepository;
@@ -41,6 +42,27 @@ class IndexController extends Controller
             'discountGoods' => $discountGoods,
             'firstGoods' => $firstGoods,
             'hotGoods' => $hotGoods,
+        ]);
+    }
+
+    /**
+     * 上传图片接口
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function uploads(Request $request) {
+        $file = $request->file('file');
+        $entension = $file -> getClientOriginalExtension();
+        $filename = date('YmdHis').mt_rand(100,999).'.'.$entension;
+        $path = $file->move('uploads', $filename);
+
+        return response()->json([
+            'status' => 1,
+            'message' => '上传成功',
+            'data' => [
+                'file_path' => '/'.$path
+            ]
         ]);
     }
 }
