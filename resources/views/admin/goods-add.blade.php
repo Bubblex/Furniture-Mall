@@ -123,6 +123,22 @@
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                          商品简介<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <textarea id="summary" class="form-control" style="height: 200px;"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                          商品详情<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <script id="detail" name="content" type="text/plain"></script>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
                           产品图片<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -184,9 +200,40 @@
     <script src="/admin/vendors/pdfmake/build/vfs_fonts.js"></script>
     <script src="/admin/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
     <script src="/admin/vendors/dropzone/dist/min/dropzone.min.js"></script>
+    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="/admin/js/custom.min.js"></script>
     <script>
+      var ueConfig = {
+        toolbars: [
+          [
+            'undo',
+            'redo',
+            'bold',
+            'fontfamily', //字体
+            'fontsize', //字号
+            'paragraph', //段落格式
+            'simpleupload', //单图上传
+            'italic', //斜体
+            'underline', //下划线
+            'strikethrough', //删除线
+            'forecolor', //字体颜色
+            'backcolor', //背景色
+            'justifyleft', //居左对齐
+            'justifyright', //居右对齐
+            'justifycenter', //居中对齐
+            'justifyjustify', //两端对齐
+          ],
+        ],
+        initialFrameWidth: '100%',
+        initialFrameHeight: '800px',
+        elementPathEnabled: false,
+      }
+
+      var ueDetail = UE.getEditor('detail', ueConfig);
+
       Dropzone.autoDiscover = false;
 
       $('#norm').tagsInput({
@@ -214,6 +261,7 @@
         var price = $('#price').val();
         var discount_price = $('#discount_price').val()
         var norm = $('#norm').val();
+        var summary = $('#summary').val();
         var images = [];
         var files = myDropzone.getAcceptedFiles();
 
@@ -231,6 +279,14 @@
         }
         else if (!discount_price) {
           alert('请输入商品折扣价')
+          return
+        }
+        else if (!summary) {
+          alert('请输入商品简介')
+          return
+        }
+        else if (!ueDetail.hasContents()) {
+          alert('请输入商品详情')
           return
         }
         else if (files.length === 0) {
@@ -257,6 +313,8 @@
             discount_price: discount_price,
             norm: norm,
             images: images,
+            summary: summary,
+            detail: ueDetail.getContent()
           },
           success: function(data) {
             alert(data.message)

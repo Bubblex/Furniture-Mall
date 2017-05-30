@@ -134,6 +134,8 @@ class GoodsRepository
         $goods->norm = $params->norm;
         $goods->price = $params->price;
         $goods->discount_price = $params->discount_price;
+        $goods->summary = $params->summary;
+        $goods->detail = $params->detail;
         $goods->save();
 
         return $goods;
