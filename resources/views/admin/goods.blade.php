@@ -108,7 +108,7 @@
                                 @elseif ($item->status == 2)
                                     <a href="#" data-id="{{ $item->id }}" data-status="1" class="goods-status">启用</a>
                                 @endif
-                                <a href="#" data-id="{{ $item->id }}" class="goods-update">修改</a>
+                                <a href="/admin/goods/update?id={{ $item->id }}" data-id="{{ $item->id }}" class="goods-update">修改</a>
                                 <a href="#" data-id="{{ $item->id }}" class="goods-delete">删除</a>
                             </td>
                           </tr>

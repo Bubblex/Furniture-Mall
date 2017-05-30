@@ -97,6 +97,13 @@ class GoodsRepository
             ->find($id);
     }
 
+    public function find($id) {
+        return $this->goods
+            ->with('type')
+            ->with('images')
+            ->find($id);
+    }
+
     /**
      * 获取所有商品
      *

@@ -185,6 +185,18 @@ Route::group(['prefix' => 'admin'], function() {
             Route::post('add', 'AdminController@goodsAdd');
 
             /**
+             * 修改商品页
+             * 访问地址：/admin/goods/update
+             */
+            Route::get('update', 'AdminController@goodsUpdatePage');
+
+            /**
+             * 修改商品接口
+             * 访问地址：/admin/goods/update
+             */
+            Route::post('update', 'AdminController@goodsUpdate');
+
+            /**
              * 禁用 / 启用商品
              * 访问地址：/admin/goods/disable
              */

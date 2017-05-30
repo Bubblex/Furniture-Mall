@@ -287,6 +287,38 @@ class AdminController extends Controller
     }
 
     /**
+     * 修改商品页面
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function goodsUpdatePage(Request $request) {
+        $goodsType = $this->goodsType->all();
+        $goods = $this->goods->find($request->id);
+
+        return view('admin.goods-update')->with([
+            'goodsType' => $goodsType,
+            'goods' => $goods,
+        ]);
+    }
+
+    public function goodsUpdate(Request $request) {
+        $this->goods->update($request->id, [
+            'name' => $request->name,
+            'goods_type_id' => $request->type,
+            'norm' => $request->norm,
+            'price' => $request->price,
+            'discount_price' => $request->discount_price,
+            'summary' => $request->summary,
+            'detail' => $request->detail
+        ]);
+        return response()->json([
+            'status' => 1,
+            'message' => '修改成功'
+        ]);
+    }
+
+    /**
      * 添加商品接口
      *
      * @param Request $request
@@ -308,6 +340,11 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * 订单页
+     *
+     * @return void
+     */
     public function orderPage() {
         return view('admin.order')->with([
             'orders' => $this->order->allWithTrashed()
