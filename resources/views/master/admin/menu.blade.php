@@ -42,6 +42,12 @@
                             商品管理
                         </a>
                     </li>
+                    <li>
+                        <a href="/admin/order">
+                            <i class="fa fa-home"></i>
+                            购买记录
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

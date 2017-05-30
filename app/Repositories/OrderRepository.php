@@ -46,4 +46,8 @@ class OrderRepository
     public function delete($id) {
         return $this->order->destory($id);
     }
+
+    public function allWithTrashed() {
+        return $this->order->withTrashed()->with(['goods', 'user'])->get();
+    }
 }

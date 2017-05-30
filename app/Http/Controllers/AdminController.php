@@ -11,22 +11,26 @@ use App\Repositories\UserRepository;
 use App\Repositories\GoodsTypeRepository;
 use App\Repositories\GoodsImageRepository;
 use App\Repositories\GoodsRepository;
+use App\Repositories\OrderRepository;
 
 class AdminController extends Controller
 {
     protected $user;
     protected $goods;
+    protected $order;
     protected $goodsType;
     protected $goodsImage;
 
     public function __construct(
         UserRepository $user,
         GoodsRepository $goods,
+        OrderRepository $order,
         GoodsTypeRepository $goodsType,
         GoodsImageRepository $goodsImage
     ) {
         $this->user = $user;
         $this->goods = $goods;
+        $this->order = $order;
         $this->goodsType = $goodsType;
         $this->goodsImage = $goodsImage;
     }
@@ -301,6 +305,12 @@ class AdminController extends Controller
         return response()->json([
             'status' => 1,
             'message' => '商品添加成功'
+        ]);
+    }
+
+    public function orderPage() {
+        return view('admin.order')->with([
+            'orders' => $this->order->allWithTrashed()
         ]);
     }
 }

@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="check_box">
 			<div class="col-md-9 cart-items">
-				<h1>我的订单({{ count($orders) }})</h1>
+				<h1>购买记录({{ count($orders) }})</h1>
 				<script>
 					$(document).ready(function(c) {
 						$('.close2').on('click', function(c) {

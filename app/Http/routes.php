@@ -145,6 +145,12 @@ Route::group(['prefix' => 'admin'], function() {
          */
         Route::post('change-password', 'AdminController@changePassword');
 
+        /**
+         * 购买记录页
+         * 访问地址：/admin/order
+         */
+        Route::get('order', 'AdminController@orderPage');
+
         Route::group(['prefix' => 'user'], function() {
             /**
              * 用户列表页
